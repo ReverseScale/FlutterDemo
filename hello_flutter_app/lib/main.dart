@@ -126,7 +126,7 @@ class HorizontalList extends StatelessWidget{
 
 class VerticalList extends StatelessWidget{
   @override
-
+  
   Widget build(BuildContext context){
     return ListView(
       scrollDirection: Axis.vertical,
@@ -181,7 +181,7 @@ class DataList extends StatelessWidget{
         return new ListTile(
             leading: new Icon(Icons.headset),
             title: new Text('欢迎光临，${items[index]}为您服务'),
-            subtitle: new Text('天上人间恭祝您，阖家幸福'),
+            subtitle: new Text('天上人间 恭祝您，阖家幸福'),
             trailing: new Icon(Icons.arrow_drop_down),
           );
       },

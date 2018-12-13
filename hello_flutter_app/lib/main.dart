@@ -5,11 +5,21 @@ import 'package:flutter/material.dart';
 // 单行调用使用 “=> 函数”
 // void main() => runApp(MyApp()); 
 void main() {
-  runApp(MyApp());
+  runApp(MyApp(
+    // items: List()
+    // items: [1, 2, 3]
+    // items: List<String>()
+    items: new List<String>.generate(1000, (i)=>"$i 号技师")
+  ));
 }
 
 // MyApp 类继承自 StatelessWidget，@override 重写
 class MyApp extends StatelessWidget {
+
+  final List<String> items;
+  // 构造函数
+  MyApp({Key key, @required this.items}):super(key:key);
+
   @override
 
   // build 方法
@@ -24,12 +34,7 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('ListView Widget')),
-
-        body: Center(
-          child: Container(
-            child: VerticalImageList()
-          ),
-        ),
+        body: DataList(items: items)
       ),
     );
   }
@@ -79,6 +84,7 @@ class LinearGradientContainer extends StatelessWidget{
 
 class NetworkImage extends StatelessWidget{
   @override
+
   Widget build(BuildContext context){
     return new Image.network(
       'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-16/77393802.jpg',
@@ -120,6 +126,7 @@ class HorizontalList extends StatelessWidget{
 
 class VerticalList extends StatelessWidget{
   @override
+
   Widget build(BuildContext context){
     return ListView(
       scrollDirection: Axis.vertical,
@@ -145,7 +152,6 @@ class VerticalList extends StatelessWidget{
   }
 }
 
-
 class VerticalImageList extends StatelessWidget{
   @override
 
@@ -161,66 +167,24 @@ class VerticalImageList extends StatelessWidget{
   }
 }
 
-/// 官方点击加1 Demo MyApp
-// // MyApp 类继承自 StatelessWidget，@override 重写
-// class MyApp extends StatelessWidget {
-//   @override
+class DataList extends StatelessWidget{
 
-//   // build 方法
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Welcome to Flutter!',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: MyHomePage(title: 'Flutter Demo Home Page'),
-//     );
-//   }
-// }
+  final List<String> items;
+  DataList({Key key, @required this.items}):super(key:key);
 
-// class MyHomePage extends StatefulWidget {
-//   MyHomePage({Key key, this.title}) : super(key: key);
+  @override
 
-//   final String title;
-
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   int _counter = 0;
-
-//   void _incrementCounter() {
-//     setState(() {
-//       _counter++;
-//     });
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(widget.title),
-//       ),
-//       body: Center(
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: <Widget>[
-//             Text(
-//               'You have pushed the button this many times:',
-//             ),
-//             Text(
-//               '$_counter',
-//               style: Theme.of(context).textTheme.display1,
-//             ),
-//           ],
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         onPressed: _incrementCounter,
-//         tooltip: 'Increment',
-//         child: Icon(Icons.add),
-//       ),
-//     );
-//   }
-// }
+  Widget build(BuildContext context){
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, index){
+        return new ListTile(
+            leading: new Icon(Icons.headset),
+            title: new Text('欢迎光临，${items[index]}为您服务'),
+            subtitle: new Text('天上人间恭祝您，阖家幸福'),
+            trailing: new Icon(Icons.arrow_drop_down),
+          );
+      },
+    );
+  }
+}

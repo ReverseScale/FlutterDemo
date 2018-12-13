@@ -27,21 +27,47 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Container(
 
-            
+            /// image
+            // child: new Image.network(
+            //   'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-16/77393802.jpg',
+            //   fit: BoxFit.contain,
+            //   color: Colors.greenAccent,
+            //   colorBlendMode: BlendMode.multiply,
+            //   repeat: ImageRepeat.repeat,
+            // ),
+            // width: 300.0,
+            // height: 200.0,
+            // color: Colors.lightBlue,
+
+            /// Container 
+            // child: new Text('Hello Flutter \n🤪🤪🤪🤪🤪🤪', style: TextStyle(fontSize: 38.0),),
+            // alignment: Alignment.topCenter,
+            // width: 500.0,
+            // height: 400.0,
+            // // color: Colors.lightBlue,
+            // padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+            // margin: const EdgeInsets.all(10.0),
+            // decoration: new BoxDecoration(
+            //   gradient: const LinearGradient(
+            //     colors: [Colors.greenAccent, Colors.lightBlue, Colors.purpleAccent]
+            //   ),
+            //   border: Border.all(width: 2.0, color: Colors.redAccent),
+            //   borderRadius: BorderRadius.circular(15.0)
+            // ),
 
             /// Text 
-            child: Text(
-              'Hello Word?! 🤪，我是一个专门展示文本的东西，额，我应该被称作组件...',
-              textAlign: TextAlign.start,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontSize: 18.0,
-                color: Color.fromARGB(255, 255, 125, 125),
-                decoration: TextDecoration.underline,
-                decorationStyle: TextDecorationStyle.solid,
-              ),
-            ),
+            // child: Text(
+            //   'Hello Word?! 🤪，我是一个专门展示文本的东西，额，我应该被称作组件...',
+            //   textAlign: TextAlign.start,
+            //   maxLines: 1,
+            //   overflow: TextOverflow.ellipsis,
+            //   style: TextStyle(
+            //     fontSize: 18.0,
+            //     color: Color.fromARGB(255, 255, 125, 125),
+            //     decoration: TextDecoration.underline,
+            //     decorationStyle: TextDecorationStyle.solid,
+            //   ),
+            // ),
               
           ),
         ),

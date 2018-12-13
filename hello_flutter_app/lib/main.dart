@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         // appBar: AppBar(
         //     title: Text('Flutter'),
         // ),
-        appBar: new AppBar(title: new Text('ListView Widget')),
+        appBar: new AppBar(title: new Text('Flutter Widget')),
         body: GridViewList()
         )
     );

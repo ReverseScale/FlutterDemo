@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('Flutter Widget')),
-        body: RowViewList()
+        body: ColumnViewList()
         )
     );
   }
@@ -243,6 +243,26 @@ class RowViewList extends StatelessWidget{
         ),
       // ),
     ]
+    );
+  }
+}
+
+class ColumnViewList extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+    return Center(child:Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('我是1号技师'),
+        Text('我是2号技师'),
+        Expanded(child:Text('我是3号技师')),
+        Expanded(child:Text('我是4号技师')),
+        Expanded(child:Text('我是5号技师，我会的可多了')),
+      ],
+    )
     );
   }
 }

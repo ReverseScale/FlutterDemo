@@ -34,8 +34,8 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('ListView Widget')),
-        body: DataList(items: items)
-      ),
+        body: GridViewList()
+        )
     );
   }
 }
@@ -179,12 +179,35 @@ class DataList extends StatelessWidget{
       itemCount: items.length,
       itemBuilder: (context, index){
         return new ListTile(
-            leading: new Icon(Icons.headset),
+            leading: new Icon(Icons.call),
             title: new Text('欢迎光临，${items[index]}为您服务'),
             subtitle: new Text('天上人间 恭祝您，阖家幸福'),
             trailing: new Icon(Icons.arrow_drop_down),
           );
       },
+    );
+  }
+}
+
+class GridViewList extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+    return GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 3,
+        mainAxisSpacing: 2.0,
+        crossAxisSpacing: 2.0,
+        childAspectRatio: 0.75,
+      ),
+      children: <Widget>[
+        new Image.network('https://img3.doubanio.com/view/photo/m/public/p2368873040.jpg', fit: BoxFit.cover,),
+        new Image.network('https://img3.doubanio.com/view/photo/m/public/p2508826592.jpg', fit: BoxFit.cover,),
+        new Image.network('https://img3.doubanio.com/view/photo/m/public/p2508826873.jpg', fit: BoxFit.cover,),
+        new Image.network('https://img3.doubanio.com/view/photo/m/public/p2508826863.jpg', fit: BoxFit.cover,),
+        new Image.network('https://img1.doubanio.com/view/photo/m/public/p2508826727.jpg', fit: BoxFit.cover,),
+      ],
     );
   }
 }

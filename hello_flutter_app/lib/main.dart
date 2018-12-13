@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('Flutter Widget')),
-        body: GridViewList()
+        body: RowViewList()
         )
     );
   }
@@ -208,6 +208,41 @@ class GridViewList extends StatelessWidget{
         new Image.network('https://img3.doubanio.com/view/photo/m/public/p2508826863.jpg', fit: BoxFit.cover,),
         new Image.network('https://img1.doubanio.com/view/photo/m/public/p2508826727.jpg', fit: BoxFit.cover,),
       ],
+    );
+  }
+}
+
+class RowViewList extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+    return Row(children: <Widget>[
+      // Expanded(
+      //   child: 
+        new RaisedButton(
+          onPressed: (){},
+          color: Colors.redAccent,
+          child: new Text('Button'),
+        ),
+      // ),
+      Expanded(
+        child: 
+        new RaisedButton(
+          onPressed: (){},
+          color: Colors.blueAccent,
+          child: new Text('Blue Button'),
+        ),
+      ),
+      // Expanded(
+      //   child: 
+        new RaisedButton(
+          onPressed: (){},
+          color: Colors.orangeAccent,
+          child: new Text('Button'),
+        ),
+      // ),
+    ]
     );
   }
 }

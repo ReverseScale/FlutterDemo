@@ -24,84 +24,140 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('ListView Widget')),
-        
-        body: new ListView(
-          children: <Widget>[
 
-            /// ListTile
-            new Image.network('http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'),
-            new Image.network('http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'),
-            new Image.network('http://jspang.com/static/myimg/smile-vue.jpg'),
-
-            /// ListTile
-            // new ListTile(
-            //   leading: new Icon(Icons.perm_camera_mic),
-            //   title: new Text('perm_camera_mic'),
-            // ),
-            // new ListTile(
-            //   leading: new Icon(Icons.add_call),
-            //   title: new Text('add_call'),
-            // ),
-            // new ListTile(
-            //   leading: new Icon(Icons.access_time),
-            //   title: new Text('access_time'),
-            // ),
-            // new ListTile(
-            //   leading: new Icon(Icons.add_box),
-            //   title: new Text('add_box'),
-            // )
-          ],
+        body: Center(
+          child: Container(
+            child: VerticalImageList()
+          ),
         ),
+      ),
+    );
+  }
+}
 
-        // Body
-        // body: Center(
-          // child: Container(
+class TextWidget extends StatelessWidget{
+  @override
 
-            /// image
-            // child: new Image.network(
-            //   'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-16/77393802.jpg',
-            //   fit: BoxFit.contain,
-            //   color: Colors.greenAccent,
-            //   colorBlendMode: BlendMode.multiply,
-            //   repeat: ImageRepeat.repeat,
-            // ),
-            // width: 300.0,
-            // height: 200.0,
-            // color: Colors.lightBlue,
-
-            /// Container 
-            // child: new Text('Hello Flutter \n🤪🤪🤪🤪🤪🤪', style: TextStyle(fontSize: 38.0),),
-            // alignment: Alignment.topCenter,
-            // width: 500.0,
-            // height: 400.0,
-            // // color: Colors.lightBlue,
-            // padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
-            // margin: const EdgeInsets.all(10.0),
-            // decoration: new BoxDecoration(
-            //   gradient: const LinearGradient(
-            //     colors: [Colors.greenAccent, Colors.lightBlue, Colors.purpleAccent]
-            //   ),
-            //   border: Border.all(width: 2.0, color: Colors.redAccent),
-            //   borderRadius: BorderRadius.circular(15.0)
-            // ),
-
-            /// Text 
-            // child: Text(
-            //   'Hello Word?! 🤪，我是一个专门展示文本的东西，额，我应该被称作组件...',
-            //   textAlign: TextAlign.start,
-            //   maxLines: 1,
-            //   overflow: TextOverflow.ellipsis,
-            //   style: TextStyle(
-            //     fontSize: 18.0,
-            //     color: Color.fromARGB(255, 255, 125, 125),
-            //     decoration: TextDecoration.underline,
-            //     decorationStyle: TextDecorationStyle.solid,
-            //   ),
-            // ),
-              
-          // ),
+  Widget build(BuildContext){
+    return Text(
+        'Hello Word?! 🤪，我是一个专门展示文本的东西，额，我应该被称作组件...',
+        textAlign: TextAlign.start,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: TextStyle(
+          fontSize: 18.0,
+          color: Color.fromARGB(255, 255, 125, 125),
+          decoration: TextDecoration.underline,
+          decorationStyle: TextDecorationStyle.solid,
         ),
-      );
+    );
+  }
+}
+
+class LinearGradientContainer extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext){
+    return Container(
+        child: new Text('Hello Flutter \n🤪🤪🤪🤪🤪🤪', style: TextStyle(fontSize: 38.0),),
+        alignment: Alignment.topCenter,
+        width: 500.0,
+        height: 400.0,
+        // color: Colors.lightBlue,
+        padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
+        margin: const EdgeInsets.all(10.0),
+        decoration: new BoxDecoration(
+          gradient: const LinearGradient(
+            colors: [Colors.greenAccent, Colors.lightBlue, Colors.purpleAccent]
+          ),
+          border: Border.all(width: 2.0, color: Colors.redAccent),
+          borderRadius: BorderRadius.circular(15.0)
+        ),
+    );
+  }
+}
+
+class NetworkImage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return new Image.network(
+      'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-16/77393802.jpg',
+      fit: BoxFit.contain,
+      color: Colors.greenAccent,
+      colorBlendMode: BlendMode.multiply,
+      repeat: ImageRepeat.repeat,
+    );
+  }
+}
+
+class HorizontalList extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        new Container(
+          width: 180.0,
+          color: Colors.lightBlue,
+        ),
+        new Container(
+          width: 180.0,
+          color: Colors.yellowAccent,
+        ),
+        new Container(
+          width: 180.0,
+          color: Colors.deepOrange,
+        ),
+        new Container(
+          width: 180.0,
+          color: Colors.purpleAccent,
+        ),
+      ]
+    );
+  }
+}
+
+class VerticalList extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return ListView(
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+          new ListTile(
+            leading: new Icon(Icons.perm_camera_mic),
+            title: new Text('perm_camera_mic'),
+          ),
+          new ListTile(
+            leading: new Icon(Icons.add_call),
+            title: new Text('add_call'),
+          ),
+          new ListTile(
+            leading: new Icon(Icons.access_time),
+            title: new Text('access_time'),
+          ),
+          new ListTile(
+            leading: new Icon(Icons.add_box),
+            title: new Text('add_box'),
+          )
+      ],
+    );
+  }
+}
+
+
+class VerticalImageList extends StatelessWidget{
+  @override
+
+  Widget build(BuildContext context){
+    return ListView(
+      scrollDirection: Axis.vertical,
+      children: <Widget>[
+          new Image.network('http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'),
+          new Image.network('http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'),
+          new Image.network('http://jspang.com/static/myimg/smile-vue.jpg'),
+      ],
+    );
   }
 }
 

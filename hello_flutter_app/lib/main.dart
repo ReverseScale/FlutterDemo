@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('Flutter Widget')),
-        body: ColumnViewList()
+        body: StackViewList()
         )
     );
   }
@@ -263,6 +263,40 @@ class ColumnViewList extends StatelessWidget{
         Expanded(child:Text('我是5号技师，我会的可多了')),
       ],
     )
+    );
+  }
+}
+
+class StackViewList extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+
+    var stack = new Stack(
+      alignment: const FractionalOffset(0.5, 0.9),
+      children: <Widget>[
+        new ClipOval(
+          child: new FadeInImage.assetNetwork(
+            placeholder: "",
+            fit: BoxFit.cover,
+            image:"https://img1.doubanio.com/view/photo/m/public/p2508826598.jpg",
+            width: 300.0,
+            height: 300.0,
+          ),
+        ),
+        new Container(
+          decoration:  new BoxDecoration(
+            color: Colors.lightBlue,
+          ),
+          padding: EdgeInsets.all(5.0),
+          child: Text('野猪佩奇'),
+        )
+      ],
+    );
+
+    return Center(
+      child: stack,
     );
   }
 }

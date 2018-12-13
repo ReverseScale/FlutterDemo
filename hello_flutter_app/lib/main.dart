@@ -20,12 +20,42 @@ class MyApp extends StatelessWidget {
       // Scaffold 脚手架创建
       home: Scaffold(
           // Bar
-        appBar: AppBar(
-            title: Text('Flutter'),
+        // appBar: AppBar(
+        //     title: Text('Flutter'),
+        // ),
+        appBar: new AppBar(title: new Text('ListView Widget')),
+        
+        body: new ListView(
+          children: <Widget>[
+
+            /// ListTile
+            new Image.network('http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'),
+            new Image.network('http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'),
+            new Image.network('http://jspang.com/static/myimg/smile-vue.jpg'),
+
+            /// ListTile
+            // new ListTile(
+            //   leading: new Icon(Icons.perm_camera_mic),
+            //   title: new Text('perm_camera_mic'),
+            // ),
+            // new ListTile(
+            //   leading: new Icon(Icons.add_call),
+            //   title: new Text('add_call'),
+            // ),
+            // new ListTile(
+            //   leading: new Icon(Icons.access_time),
+            //   title: new Text('access_time'),
+            // ),
+            // new ListTile(
+            //   leading: new Icon(Icons.add_box),
+            //   title: new Text('add_box'),
+            // )
+          ],
         ),
+
         // Body
-        body: Center(
-          child: Container(
+        // body: Center(
+          // child: Container(
 
             /// image
             // child: new Image.network(
@@ -69,10 +99,9 @@ class MyApp extends StatelessWidget {
             //   ),
             // ),
               
-          ),
+          // ),
         ),
-      ),
-    );
+      );
   }
 }
 

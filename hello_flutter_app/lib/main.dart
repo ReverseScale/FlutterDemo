@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
         // appBar: AppBar(
         //     title: Text('Flutter'),
         // ),
-        appBar: new AppBar(title: new Text('Flutter Widget')),
-        body: CardLayout()
+        appBar: new AppBar(title: new Text('Flutter Navigation')),
+        body: Navigation()
         )
     );
   }
@@ -359,20 +359,40 @@ class CardLayout extends StatelessWidget{
   }
 }
 
-// 卡片布局
+// 导航
 class Navigation extends StatelessWidget{
 
   @override
 
   Widget build(BuildContext context){
 
-    var card = new Card(
-      child: Column(
-      )
-    );
-
     return Center(
-      child: card,
+      child: RaisedButton(
+        child: Text('查看技师资料'),
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(
+            builder: (context)=> SecondScreenPage()
+          ));
+        },
+      ),
+    );
+  }
+}
+
+// 导航详情页
+class SecondScreenPage extends StatelessWidget{
+  @override 
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(title: Text('技师资料')),
+      body: Center(
+        child: RaisedButton(
+          child: Text('返回'),
+          onPressed: (){
+            Navigator.pop(context);
+          },
+        ),
+      ),
     );
   }
 }

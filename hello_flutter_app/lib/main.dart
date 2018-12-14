@@ -34,12 +34,13 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('Flutter Widget')),
-        body: StackViewList()
+        body: CardLayout()
         )
     );
   }
 }
 
+// 文本
 class TextWidget extends StatelessWidget{
   @override
 
@@ -59,6 +60,7 @@ class TextWidget extends StatelessWidget{
   }
 }
 
+// 渐变容器
 class LinearGradientContainer extends StatelessWidget{
   @override
 
@@ -82,6 +84,7 @@ class LinearGradientContainer extends StatelessWidget{
   }
 }
 
+// 网络图片
 class NetworkImage extends StatelessWidget{
   @override
 
@@ -96,6 +99,7 @@ class NetworkImage extends StatelessWidget{
   }
 }
 
+// 横向列表
 class HorizontalList extends StatelessWidget{
   @override
 
@@ -124,6 +128,7 @@ class HorizontalList extends StatelessWidget{
   }
 }
 
+// 竖向列表
 class VerticalList extends StatelessWidget{
   @override
   
@@ -152,6 +157,7 @@ class VerticalList extends StatelessWidget{
   }
 }
 
+// 竖向图片列表
 class VerticalImageList extends StatelessWidget{
   @override
 
@@ -167,6 +173,7 @@ class VerticalImageList extends StatelessWidget{
   }
 }
 
+// 数据列表
 class DataList extends StatelessWidget{
 
   final List<String> items;
@@ -189,6 +196,7 @@ class DataList extends StatelessWidget{
   }
 }
 
+// 卡片列表
 class GridViewList extends StatelessWidget{
 
   @override
@@ -212,6 +220,7 @@ class GridViewList extends StatelessWidget{
   }
 }
 
+// 行
 class RowViewList extends StatelessWidget{
 
   @override
@@ -247,6 +256,7 @@ class RowViewList extends StatelessWidget{
   }
 }
 
+// 列
 class ColumnViewList extends StatelessWidget{
 
   @override
@@ -267,6 +277,7 @@ class ColumnViewList extends StatelessWidget{
   }
 }
 
+// 层
 class StackViewList extends StatelessWidget{
 
   @override
@@ -291,12 +302,77 @@ class StackViewList extends StatelessWidget{
           ),
           padding: EdgeInsets.all(5.0),
           child: Text('野猪佩奇'),
-        )
+        ),
+        // new Positioned(
+        //   top: 10.0,
+        //   left: 130.0,
+        //   child: new Text('野猪佩奇'),
+        // ),
+        // new Positioned(
+        //   right: 130.0,
+        //   bottom: 10.0,
+        //   child: new Text('社会人'),
+        // )
       ],
     );
 
     return Center(
       child: stack,
+    );
+  }
+}
+
+// 卡片布局
+class CardLayout extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+
+    var card = new Card(
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            title: Text('天上人间 北京总店'),
+            subtitle: Text('北京市 海淀区 颐和园路'),
+            leading: new Icon(Icons.gps_fixed),
+          ),
+          new Divider(),
+          ListTile(
+            title: Text('天上人间 上海分店'),
+            subtitle: Text('上海市 浦东新区 达尔文路'),
+            leading: new Icon(Icons.gps_fixed),
+          ),
+          new Divider(),
+          ListTile(
+            title: Text('天上人间 成都分店'),
+            subtitle: Text('成都市 武侯区 一环路'),
+            leading: new Icon(Icons.gps_fixed),
+          ),
+        ],
+      ),
+    );
+
+    return Center(
+      child: card,
+    );
+  }
+}
+
+// 卡片布局
+class Navigation extends StatelessWidget{
+
+  @override
+
+  Widget build(BuildContext context){
+
+    var card = new Card(
+      child: Column(
+      )
+    );
+
+    return Center(
+      child: card,
     );
   }
 }

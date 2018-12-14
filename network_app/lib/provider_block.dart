@@ -1,9 +1,9 @@
+import 'package:flutter/widgets.dart';
+import 'package:rxdart/rxdart.dart';
+
 import 'package:network_app/api/const.dart';
 import 'package:network_app/model/search_model.dart';
 import 'package:network_app/api/api.dart';
-
-import 'package:flutter/widgets.dart';
-import 'package:rxdart/rxdart.dart';
 
 class ProviderBlock {
   final String _EMPTY = "_empty_";
@@ -62,6 +62,6 @@ class ProviderBlock {
         }
       );
   }
-  
+
   static ProviderBlock newInstance() => new ProviderBlock();
 }

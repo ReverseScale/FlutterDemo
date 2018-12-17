@@ -43,7 +43,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bloc Sample"),
+        title: Text("Github List Sample"),
       ),
       body: buildBody(),
     );
@@ -84,7 +84,14 @@ class HomePageState extends State<HomePage> {
       itemBuilder: (context, index) {
         ItemModel itemModel = data.items[index];
         return InkWell(
-          onTap: () {},
+          onTap: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => PageDetail(item:data.items[index])
+                )
+              );
+            },
           child: Card(
             margin: EdgeInsets.only(
               left: 15.0,
@@ -132,7 +139,18 @@ class HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(
                           left: 15.0,
                         ),
-                        child: Text("size:${itemModel.size}",
+                        child: 
+                          Image.network(
+                            'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/50356447.jpg',
+                            width: 16.0, 
+                            height: 16.0,
+                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 5.0,
+                        ),
+                        child: Text("${itemModel.watchers}",
                             style: TextStyle(
                               color: Color(0xff9b9b9b),
                               fontSize: 14.0,
@@ -141,6 +159,17 @@ class HomePageState extends State<HomePage> {
                       Padding(
                         padding: const EdgeInsets.only(
                           left: 15.0,
+                        ),
+                        child: 
+                          Image.network(
+                            'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/17357054.jpg',
+                            width: 16.0, 
+                            height: 16.0,
+                          ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 5.0,
                         ),
                         child: Text("forks:${itemModel.forks}",
                             style: TextStyle(
@@ -161,5 +190,18 @@ class HomePageState extends State<HomePage> {
 
   Widget buildBody() {
     return buildData();
+  }
+}
+
+class PageDetail extends StatelessWidget {
+  final ItemModel item;
+  PageDetail({Key key, @required this.item}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('${item.name} 库详情页')),
+      body: Center(child: Text('${item.description}')),
+    );
   }
 }

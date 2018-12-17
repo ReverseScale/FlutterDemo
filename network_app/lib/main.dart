@@ -3,6 +3,7 @@ import 'provider_block.dart';
 
 import 'package:network_app/model/search_model.dart';
 import 'package:network_app/model/item_model.dart';
+import 'package:network_app/detail.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatefulWidget {
   @override
   HomePageState createState() {
-    return new HomePageState();
+    return HomePageState();
   }
 }
 
@@ -88,7 +89,7 @@ class HomePageState extends State<HomePage> {
               Navigator.push(
                 context, 
                 MaterialPageRoute(
-                  builder: (context) => PageDetail(item:data.items[index])
+                  builder: (context) => DetailViewTab(item:data.items[index])
                 )
               );
             },
@@ -171,7 +172,7 @@ class HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(
                           left: 5.0,
                         ),
-                        child: Text("forks:${itemModel.forks}",
+                        child: Text("${itemModel.forks}",
                             style: TextStyle(
                               color: Color(0xff9b9b9b),
                               fontSize: 14.0,
@@ -190,18 +191,5 @@ class HomePageState extends State<HomePage> {
 
   Widget buildBody() {
     return buildData();
-  }
-}
-
-class PageDetail extends StatelessWidget {
-  final ItemModel item;
-  PageDetail({Key key, @required this.item}):super(key:key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('${item.name} 库详情页')),
-      body: Center(child: Text('${item.description}')),
-    );
   }
 }

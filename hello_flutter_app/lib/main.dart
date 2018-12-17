@@ -5,11 +5,16 @@ import 'package:flutter/material.dart';
 // 单行调用使用 “=> 函数”
 // void main() => runApp(MyApp()); 
 void main() {
-  runApp(MyApp(
-    // items: List()
-    // items: [1, 2, 3]
-    // items: List<String>()
-    items: new List<String>.generate(1000, (i)=>"$i 号技师")
+
+  // 基础组件
+  // runApp(MyApp(
+  //   items: new List<String>.generate(1000, (i)=>"$i 号技师")
+  // ));
+
+  // 导航跳转
+  runApp(MaterialApp(
+    title: '导航数据传递和接收',
+    home: ProductHome()
   ));
 }
 
@@ -34,14 +39,14 @@ class MyApp extends StatelessWidget {
         //     title: Text('Flutter'),
         // ),
         appBar: new AppBar(title: new Text('Flutter Navigation')),
-        body: Navigation()
+        body: CardLayout()
         )
     );
   }
 }
 
 // 文本
-class TextWidget extends StatelessWidget{
+class TextWidget extends StatelessWidget {
   @override
 
   Widget build(BuildContext){
@@ -61,7 +66,7 @@ class TextWidget extends StatelessWidget{
 }
 
 // 渐变容器
-class LinearGradientContainer extends StatelessWidget{
+class LinearGradientContainer extends StatelessWidget {
   @override
 
   Widget build(BuildContext){
@@ -85,7 +90,7 @@ class LinearGradientContainer extends StatelessWidget{
 }
 
 // 网络图片
-class NetworkImage extends StatelessWidget{
+class NetworkImage extends StatelessWidget {
   @override
 
   Widget build(BuildContext context){
@@ -100,7 +105,7 @@ class NetworkImage extends StatelessWidget{
 }
 
 // 横向列表
-class HorizontalList extends StatelessWidget{
+class HorizontalList extends StatelessWidget {
   @override
 
   Widget build(BuildContext context){
@@ -129,7 +134,7 @@ class HorizontalList extends StatelessWidget{
 }
 
 // 竖向列表
-class VerticalList extends StatelessWidget{
+class VerticalList extends StatelessWidget {
   @override
   
   Widget build(BuildContext context){
@@ -158,7 +163,7 @@ class VerticalList extends StatelessWidget{
 }
 
 // 竖向图片列表
-class VerticalImageList extends StatelessWidget{
+class VerticalImageList extends StatelessWidget {
   @override
 
   Widget build(BuildContext context){
@@ -174,7 +179,7 @@ class VerticalImageList extends StatelessWidget{
 }
 
 // 数据列表
-class DataList extends StatelessWidget{
+class DataList extends StatelessWidget {
 
   final List<String> items;
   DataList({Key key, @required this.items}):super(key:key);
@@ -197,7 +202,7 @@ class DataList extends StatelessWidget{
 }
 
 // 卡片列表
-class GridViewList extends StatelessWidget{
+class GridViewList extends StatelessWidget {
 
   @override
 
@@ -221,7 +226,7 @@ class GridViewList extends StatelessWidget{
 }
 
 // 行
-class RowViewList extends StatelessWidget{
+class RowViewList extends StatelessWidget {
 
   @override
 
@@ -257,7 +262,7 @@ class RowViewList extends StatelessWidget{
 }
 
 // 列
-class ColumnViewList extends StatelessWidget{
+class ColumnViewList extends StatelessWidget {
 
   @override
 
@@ -278,7 +283,7 @@ class ColumnViewList extends StatelessWidget{
 }
 
 // 层
-class StackViewList extends StatelessWidget{
+class StackViewList extends StatelessWidget {
 
   @override
 
@@ -323,7 +328,7 @@ class StackViewList extends StatelessWidget{
 }
 
 // 卡片布局
-class CardLayout extends StatelessWidget{
+class CardLayout extends StatelessWidget {
 
   @override
 
@@ -360,27 +365,27 @@ class CardLayout extends StatelessWidget{
 }
 
 // 导航
-class Navigation extends StatelessWidget{
-
+class Navigation extends StatelessWidget {
   @override
-
   Widget build(BuildContext context){
-
-    return Center(
-      child: RaisedButton(
-        child: Text('查看技师资料'),
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context)=> SecondScreenPage()
-          ));
-        },
-      ),
+    return Scaffold(
+      appBar: AppBar(title: Text('技师列表')),
+      body: Center(
+        child: RaisedButton(
+          child: Text('查看技师资料'),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context)=> SecondScreenPage()
+            ));
+          },
+        ),
+      )
     );
   }
 }
 
 // 导航详情页
-class SecondScreenPage extends StatelessWidget{
+class SecondScreenPage extends StatelessWidget {
   @override 
   Widget build(BuildContext context){
     return Scaffold(
@@ -396,3 +401,73 @@ class SecondScreenPage extends StatelessWidget{
     );
   }
 }
+
+// 技师类 
+class Product {
+  final String title;
+  final String description;
+
+  Product(this.title, this.description);
+}
+
+// 技师列表脚手架
+class ProductHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ProductList(
+      products:List.generate(
+        20, (i)=>Product('专业技师 $i 号', '漂亮的小姐姐,编号为 $i')
+      )
+    );
+  }
+}
+
+// 技师列表
+class ProductList extends StatelessWidget {
+  final List<Product> products;
+  ProductList({Key key, @required this.products}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('技师列表')),
+      body: ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (context, index){
+          return ListTile(
+            title: Text(products[index].title),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => ProductDetail(product:products[index])
+                )
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+class ProductDetail extends StatelessWidget {
+  final Product product;
+  ProductDetail({Key key, @required this.product}):super(key:key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('${product.title}号技师详情')),
+      body: Center(child: Text('${product.description}')),
+    );
+  }
+}
+
+
+
+
+
+
+
+

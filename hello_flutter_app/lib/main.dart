@@ -17,16 +17,16 @@ void main() {
   // ));
 
   // 导航跳转
-  // runApp(MaterialApp(
-  //   title: '导航数据传递和接收',
-  //   home: Navigation()
-  // ));
+  runApp(MaterialApp(
+    title: '导航数据传递和接收',
+    home: FirstPage()
+  ));
 
   // UI 练习
-  runApp(MaterialApp(
-    title: 'UI 练习',
-    home: TravelHome()
-  ));
+  // runApp(MaterialApp(
+  //   title: 'UI 练习',
+  //   home: TravelHome()
+  // ));
 }
 
 

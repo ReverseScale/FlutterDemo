@@ -111,18 +111,18 @@ class RouteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () {_navigateToXiaoJiejie(context);},
+      onPressed: () {
+        _navigateToXiaoJiejie(context);
+      },
       child: Text('去问小姐姐'),
     );
   }
 
   _navigateToXiaoJiejie(BuildContext context) async {
     final result = await Navigator.push(
-      context, 
-      MaterialPageRoute(builder: (context)=>XiaoJiejiePage())
-      );
+        context, MaterialPageRoute(builder: (context) => XiaoJiejiePage()));
 
-      Scaffold.of(context).showSnackBar(SnackBar(content:Text('$result')));
+    Scaffold.of(context).showSnackBar(SnackBar(content: Text('$result')));
   }
 }
 
@@ -130,25 +130,27 @@ class XiaoJiejiePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('小姐姐列表'),),
+      appBar: AppBar(
+        title: Text('小姐姐列表'),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
             RaisedButton(
               child: Text('大长腿小姐姐'),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context, '大长腿小姐姐,电话1881818188');
               },
             ),
             RaisedButton(
               child: Text('小蛮腰小姐姐'),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context, '小蛮腰小姐姐,电话1901818188');
               },
             ),
             RaisedButton(
               child: Text('大胸脯小姐姐'),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context, '大胸脯小姐姐,电话1991818188');
               },
             ),

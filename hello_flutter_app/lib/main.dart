@@ -16,10 +16,7 @@ void main() {
   // ));
 
   // 导航跳转
-  // runApp(MaterialApp(
-  //   title: '导航数据传递和接收',
-  //   home: FirstPage()
-  // ));
+  runApp(MaterialApp(title: '侧滑菜单', home: SlideMenu()));
 
   // UI 练习
   // runApp(MaterialApp(
@@ -28,5 +25,5 @@ void main() {
   // ));
 
   // 动画练习
-  runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
+  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
 }

@@ -73,7 +73,7 @@ class ComponentTools extends StatelessWidget {
             margin: const EdgeInsets.only(top: 8.0),
             child: Text(
               label,
-              style: new TextStyle(
+              style: TextStyle(
                 fontSize: 12.0,
                 fontWeight: FontWeight.w400,
                 color: color,

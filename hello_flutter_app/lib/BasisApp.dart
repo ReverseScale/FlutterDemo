@@ -19,7 +19,7 @@ class BasisApp extends StatelessWidget {
             // appBar: AppBar(
             //     title: Text('Flutter'),
             // ),
-            appBar: new AppBar(title: new Text('Flutter Navigation')),
+            appBar: AppBar(title: Text('Flutter Navigation')),
             body: CardLayout()));
   }
 }
@@ -48,7 +48,7 @@ class LinearGradientContainer extends StatelessWidget {
   @override
   Widget build(BuildContext) {
     return Container(
-      child: new Text(
+      child: Text(
         'Hello Flutter \n🤪🤪🤪🤪🤪🤪',
         style: TextStyle(fontSize: 38.0),
       ),
@@ -58,7 +58,7 @@ class LinearGradientContainer extends StatelessWidget {
       // color: Colors.lightBlue,
       padding: const EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
       margin: const EdgeInsets.all(10.0),
-      decoration: new BoxDecoration(
+      decoration: BoxDecoration(
           gradient: const LinearGradient(colors: [
             Colors.greenAccent,
             Colors.lightBlue,
@@ -74,7 +74,7 @@ class LinearGradientContainer extends StatelessWidget {
 class NetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Image.network(
+    return Image.network(
       'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-16/77393802.jpg',
       fit: BoxFit.contain,
       color: Colors.greenAccent,
@@ -89,19 +89,19 @@ class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(scrollDirection: Axis.horizontal, children: <Widget>[
-      new Container(
+      Container(
         width: 180.0,
         color: Colors.lightBlue,
       ),
-      new Container(
+      Container(
         width: 180.0,
         color: Colors.yellowAccent,
       ),
-      new Container(
+      Container(
         width: 180.0,
         color: Colors.deepOrange,
       ),
-      new Container(
+      Container(
         width: 180.0,
         color: Colors.purpleAccent,
       ),
@@ -116,21 +116,21 @@ class VerticalList extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.vertical,
       children: <Widget>[
-        new ListTile(
-          leading: new Icon(Icons.perm_camera_mic),
-          title: new Text('perm_camera_mic'),
+        ListTile(
+          leading: Icon(Icons.perm_camera_mic),
+          title: Text('perm_camera_mic'),
         ),
-        new ListTile(
-          leading: new Icon(Icons.add_call),
-          title: new Text('add_call'),
+        ListTile(
+          leading: Icon(Icons.add_call),
+          title: Text('add_call'),
         ),
-        new ListTile(
-          leading: new Icon(Icons.access_time),
-          title: new Text('access_time'),
+        ListTile(
+          leading: Icon(Icons.access_time),
+          title: Text('access_time'),
         ),
-        new ListTile(
-          leading: new Icon(Icons.add_box),
-          title: new Text('add_box'),
+        ListTile(
+          leading: Icon(Icons.add_box),
+          title: Text('add_box'),
         )
       ],
     );
@@ -144,11 +144,11 @@ class VerticalImageList extends StatelessWidget {
     return ListView(
       scrollDirection: Axis.vertical,
       children: <Widget>[
-        new Image.network(
+        Image.network(
             'http://jspang.com/static/upload/20181109/1bHNoNGpZjyriCNcvqdKo3s6.jpg'),
-        new Image.network(
+        Image.network(
             'http://jspang.com/static/upload/20181111/G-wj-ZQuocWlYOHM6MT2Hbh5.jpg'),
-        new Image.network('http://jspang.com/static/myimg/smile-vue.jpg'),
+        Image.network('http://jspang.com/static/myimg/smile-vue.jpg'),
       ],
     );
   }
@@ -164,11 +164,11 @@ class DataList extends StatelessWidget {
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (context, index) {
-        return new ListTile(
-          leading: new Icon(Icons.call),
-          title: new Text('欢迎光临，${items[index]}为您服务'),
-          subtitle: new Text('天上人间 恭祝您，阖家幸福'),
-          trailing: new Icon(Icons.arrow_drop_down),
+        return ListTile(
+          leading: Icon(Icons.call),
+          title: Text('欢迎光临，${items[index]}为您服务'),
+          subtitle: Text('天上人间 恭祝您，阖家幸福'),
+          trailing: Icon(Icons.arrow_drop_down),
         );
       },
     );
@@ -187,23 +187,23 @@ class GridViewList extends StatelessWidget {
         childAspectRatio: 0.75,
       ),
       children: <Widget>[
-        new Image.network(
+        Image.network(
           'https://img3.doubanio.com/view/photo/m/public/p2368873040.jpg',
           fit: BoxFit.cover,
         ),
-        new Image.network(
+        Image.network(
           'https://img3.doubanio.com/view/photo/m/public/p2508826592.jpg',
           fit: BoxFit.cover,
         ),
-        new Image.network(
+        Image.network(
           'https://img3.doubanio.com/view/photo/m/public/p2508826873.jpg',
           fit: BoxFit.cover,
         ),
-        new Image.network(
+        Image.network(
           'https://img3.doubanio.com/view/photo/m/public/p2508826863.jpg',
           fit: BoxFit.cover,
         ),
-        new Image.network(
+        Image.network(
           'https://img1.doubanio.com/view/photo/m/public/p2508826727.jpg',
           fit: BoxFit.cover,
         ),
@@ -219,25 +219,25 @@ class RowViewList extends StatelessWidget {
     return Row(children: <Widget>[
       // Expanded(
       //   child:
-      new RaisedButton(
+      RaisedButton(
         onPressed: () {},
         color: Colors.redAccent,
-        child: new Text('Button'),
+        child: Text('Button'),
       ),
       // ),
       Expanded(
-        child: new RaisedButton(
+        child: RaisedButton(
           onPressed: () {},
           color: Colors.blueAccent,
-          child: new Text('Blue Button'),
+          child: Text('Blue Button'),
         ),
       ),
       // Expanded(
       //   child:
-      new RaisedButton(
+      RaisedButton(
         onPressed: () {},
         color: Colors.orangeAccent,
-        child: new Text('Button'),
+        child: Text('Button'),
       ),
       // ),
     ]);
@@ -267,11 +267,11 @@ class ColumnViewList extends StatelessWidget {
 class StackViewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var stack = new Stack(
+    var stack = Stack(
       alignment: const FractionalOffset(0.5, 0.9),
       children: <Widget>[
-        new ClipOval(
-          child: new FadeInImage.assetNetwork(
+        ClipOval(
+          child: FadeInImage.assetNetwork(
             placeholder: "",
             fit: BoxFit.cover,
             image:
@@ -280,8 +280,8 @@ class StackViewList extends StatelessWidget {
             height: 300.0,
           ),
         ),
-        new Container(
-          decoration: new BoxDecoration(
+        Container(
+          decoration: BoxDecoration(
             color: Colors.lightBlue,
           ),
           padding: EdgeInsets.all(5.0),
@@ -310,25 +310,25 @@ class StackViewList extends StatelessWidget {
 class CardLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var card = new Card(
+    var card = Card(
       child: Column(
         children: <Widget>[
           ListTile(
             title: Text('天上人间 北京总店'),
             subtitle: Text('北京市 海淀区 颐和园路'),
-            leading: new Icon(Icons.gps_fixed),
+            leading: Icon(Icons.gps_fixed),
           ),
-          new Divider(),
+          Divider(),
           ListTile(
             title: Text('天上人间 上海分店'),
             subtitle: Text('上海市 浦东新区 达尔文路'),
-            leading: new Icon(Icons.gps_fixed),
+            leading: Icon(Icons.gps_fixed),
           ),
-          new Divider(),
+          Divider(),
           ListTile(
             title: Text('天上人间 成都分店'),
             subtitle: Text('成都市 武侯区 一环路'),
-            leading: new Icon(Icons.gps_fixed),
+            leading: Icon(Icons.gps_fixed),
           ),
         ],
       ),

@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		526C5D7221C36F7200CC9999 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C5D7121C36F7200CC9999 /* AppDelegate.swift */; };
-		526C5D7421C36F7200CC9999 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C5D7321C36F7200CC9999 /* ViewController.swift */; };
+		526C5D7421C36F7200CC9999 /* TabbarFirstController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526C5D7321C36F7200CC9999 /* TabbarFirstController.swift */; };
 		526C5D7721C36F7200CC9999 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526C5D7521C36F7200CC9999 /* Main.storyboard */; };
 		526C5D7921C36F7600CC9999 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526C5D7821C36F7600CC9999 /* Assets.xcassets */; };
 		526C5D7C21C36F7600CC9999 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 526C5D7A21C36F7600CC9999 /* LaunchScreen.storyboard */; };
+		529E30F321C9EFDC00476998 /* PushedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E30F121C9EFDC00476998 /* PushedController.swift */; };
+		529E30F421C9EFDC00476998 /* PushedController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 529E30F221C9EFDC00476998 /* PushedController.xib */; };
+		529E30F621CA03AB00476998 /* TabbarSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E30F521CA03AB00476998 /* TabbarSecondController.swift */; };
 		69D1A29C5EE13CBD323B8888 /* Pods_FlutterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DC9192469754C26167B247 /* Pods_FlutterDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,11 +34,14 @@
 /* Begin PBXFileReference section */
 		526C5D6E21C36F7200CC9999 /* FlutterDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlutterDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		526C5D7121C36F7200CC9999 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		526C5D7321C36F7200CC9999 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		526C5D7321C36F7200CC9999 /* TabbarFirstController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarFirstController.swift; sourceTree = "<group>"; };
 		526C5D7621C36F7200CC9999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		526C5D7821C36F7600CC9999 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		526C5D7B21C36F7600CC9999 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		526C5D7D21C36F7600CC9999 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529E30F121C9EFDC00476998 /* PushedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushedController.swift; sourceTree = "<group>"; };
+		529E30F221C9EFDC00476998 /* PushedController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushedController.xib; sourceTree = "<group>"; };
+		529E30F521CA03AB00476998 /* TabbarSecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarSecondController.swift; sourceTree = "<group>"; };
 		96DC9192469754C26167B247 /* Pods_FlutterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlutterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2822FC0D6956C951EE451D /* Pods-FlutterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlutterDemo/Pods-FlutterDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DC143F11BC7C8F944739C153 /* Pods-FlutterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlutterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlutterDemo/Pods-FlutterDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,7 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				526C5D7121C36F7200CC9999 /* AppDelegate.swift */,
-				526C5D7321C36F7200CC9999 /* ViewController.swift */,
+				526C5D7321C36F7200CC9999 /* TabbarFirstController.swift */,
+				529E30F521CA03AB00476998 /* TabbarSecondController.swift */,
+				529E30F121C9EFDC00476998 /* PushedController.swift */,
+				529E30F221C9EFDC00476998 /* PushedController.xib */,
 				526C5D7521C36F7200CC9999 /* Main.storyboard */,
 				526C5D7821C36F7600CC9999 /* Assets.xcassets */,
 				526C5D7A21C36F7600CC9999 /* LaunchScreen.storyboard */,
@@ -165,6 +174,7 @@
 			files = (
 				526C5D7C21C36F7600CC9999 /* LaunchScreen.storyboard in Resources */,
 				526C5D7921C36F7600CC9999 /* Assets.xcassets in Resources */,
+				529E30F421C9EFDC00476998 /* PushedController.xib in Resources */,
 				526C5D7721C36F7200CC9999 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,8 +254,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526C5D7421C36F7200CC9999 /* ViewController.swift in Sources */,
+				526C5D7421C36F7200CC9999 /* TabbarFirstController.swift in Sources */,
+				529E30F321C9EFDC00476998 /* PushedController.swift in Sources */,
 				526C5D7221C36F7200CC9999 /* AppDelegate.swift in Sources */,
+				529E30F621CA03AB00476998 /* TabbarSecondController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

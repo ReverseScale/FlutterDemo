@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatefulWidget {
-  @override
-  _AboutPageState createState() => _AboutPageState();
-}
-
-class _AboutPageState extends State<AboutPage> {
+class AboutPage extends StatelessWidget {
+  final String message;
+  final Color color;
+  AboutPage({@required this.message, @required this.color});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('About Us'),
-      ),
-      body: Center(child: Text('You are in the about page!')),
-    );
+        appBar: AppBar(
+          title: Text('About Us'),
+        ),
+        body: Container(
+          color: color,
+          child: Center(
+            child: Text(
+              "Ohh " + message + ":)",
+            ),
+          ),
+        ));
   }
 }

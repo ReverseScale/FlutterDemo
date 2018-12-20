@@ -5,7 +5,8 @@ import 'package:hello_flutter_app/BasisApp.dart';
 import 'package:hello_flutter_app/NavigationApp.dart';
 import 'package:hello_flutter_app/ComplexApp.dart';
 import 'package:hello_flutter_app/AnimationApp.dart';
-import 'package:hello_flutter_app/tabApp.dart';
+import 'package:hello_flutter_app/TabApp.dart';
+import 'package:hello_flutter_app/ChatsApp.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -26,10 +27,13 @@ void main() {
   // ));
 
   // Tab
-  runApp(MaterialApp(
-    title: 'Tab',
-    home: HomeTPage()
-  ));
+  // runApp(MaterialApp(
+  //   title: 'Tab',
+  //   home: HomeTPage()
+  // ));
+
+  // Chats
+  runApp(new FriendlychatApp());
 
   // 动画练习
   // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));

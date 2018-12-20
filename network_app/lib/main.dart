@@ -61,21 +61,24 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Github List Sample"),
-        elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,    //new  适配IOS的扁平化无阴影效果
-      ),
-      body: Container(
-        child: buildBody(),
-        decoration: Theme.of(context).platform == TargetPlatform.iOS //new    加入主题风格
-        ? new BoxDecoration(                                     //new
-            border: new Border(                                  //new  为适应IOS加入边框特性
-              top: new BorderSide(color: Colors.grey[200]),      //new  顶部加入灰色边框
-            ),                                                   //new
-          )                                                      //new
-        : null,   
-      )
-    );
+        appBar: AppBar(
+          title: Text("Github List Sample"),
+          elevation: Theme.of(context).platform == TargetPlatform.iOS
+              ? 0.0
+              : 4.0, //  适配IOS的扁平化无阴影效果
+        ),
+        body: Container(
+          child: buildBody(),
+          decoration:
+              Theme.of(context).platform == TargetPlatform.iOS //    加入主题风格
+                  ? BoxDecoration(
+                      border: Border(
+                        //  为适应IOS加入边框特性
+                        top: BorderSide(color: Colors.grey[200]), //  顶部加入灰色边框
+                      ),
+                    )
+                  : null,
+        ));
   }
 
   Widget buildData() {

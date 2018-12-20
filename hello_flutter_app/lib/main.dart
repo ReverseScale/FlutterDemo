@@ -5,6 +5,7 @@ import 'package:hello_flutter_app/BasisApp.dart';
 import 'package:hello_flutter_app/NavigationApp.dart';
 import 'package:hello_flutter_app/ComplexApp.dart';
 import 'package:hello_flutter_app/AnimationApp.dart';
+import 'package:hello_flutter_app/tabApp.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -16,13 +17,19 @@ void main() {
   // ));
 
   // 导航跳转
-  runApp(MaterialApp(title: '侧滑菜单', home: SlideMenu()));
+  // runApp(MaterialApp(title: '侧滑菜单', home: SlideMenu()));
 
   // UI 练习
   // runApp(MaterialApp(
   //   title: 'UI 练习',
   //   home: TravelHome()
   // ));
+
+  // Tab
+  runApp(MaterialApp(
+    title: 'Tab',
+    home: HomeTPage()
+  ));
 
   // 动画练习
   // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));

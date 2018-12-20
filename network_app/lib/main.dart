@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'provider_block.dart';
 
 import 'package:network_app/model/search_model.dart';
@@ -8,9 +10,25 @@ import 'package:network_app/detail.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  final ThemeData kIOSTheme = new ThemeData(
+    //Cupertino主题风格
+    primarySwatch: Colors.orange,
+    primaryColor: Colors.grey[100],
+    primaryColorBrightness: Brightness.light,
+  );
+
+  final ThemeData kDefaultTheme = new ThemeData(
+    //默认的Material主题风格
+    primarySwatch: Colors.purple,
+    accentColor: Colors.orangeAccent[400],
+  );
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: defaultTargetPlatform ==
+              TargetPlatform.iOS //newdefaultTargetPlatform用于识别操作系统
+          ? kIOSTheme //new
+          : kDefaultTheme,
       home: HomePage(),
     );
   }
@@ -45,8 +63,18 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Github List Sample"),
+        elevation: Theme.of(context).platform == TargetPlatform.iOS ? 0.0 : 4.0,    //new  适配IOS的扁平化无阴影效果
       ),
-      body: buildBody(),
+      body: Container(
+        child: buildBody(),
+        decoration: Theme.of(context).platform == TargetPlatform.iOS //new    加入主题风格
+        ? new BoxDecoration(                                     //new
+            border: new Border(                                  //new  为适应IOS加入边框特性
+              top: new BorderSide(color: Colors.grey[200]),      //new  顶部加入灰色边框
+            ),                                                   //new
+          )                                                      //new
+        : null,   
+      )
     );
   }
 
@@ -86,13 +114,12 @@ class HomePageState extends State<HomePage> {
         ItemModel itemModel = data.items[index];
         return InkWell(
           onTap: () {
-              Navigator.push(
-                context, 
+            Navigator.push(
+                context,
                 MaterialPageRoute(
-                  builder: (context) => DetailViewTab(item:data.items[index])
-                )
-              );
-            },
+                    builder: (context) =>
+                        DetailViewTab(item: data.items[index])));
+          },
           child: Card(
             margin: EdgeInsets.only(
               left: 15.0,
@@ -140,12 +167,11 @@ class HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(
                           left: 15.0,
                         ),
-                        child: 
-                          Image.network(
-                            'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/50356447.jpg',
-                            width: 16.0, 
-                            height: 16.0,
-                          ),
+                        child: Image.network(
+                          'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/50356447.jpg',
+                          width: 16.0,
+                          height: 16.0,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -161,12 +187,11 @@ class HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(
                           left: 15.0,
                         ),
-                        child: 
-                          Image.network(
-                            'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/17357054.jpg',
-                            width: 16.0, 
-                            height: 16.0,
-                          ),
+                        child: Image.network(
+                          'http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-17/17357054.jpg',
+                          width: 16.0,
+                          height: 16.0,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(

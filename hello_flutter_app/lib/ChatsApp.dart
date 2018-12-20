@@ -24,8 +24,8 @@ class FriendlychatApp extends StatelessWidget {
       //创建一个MaterialApp控件对象，其下可塞入支持Material设计语言特性的控件
       title: "Friendlychat",
       theme: defaultTargetPlatform ==
-              TargetPlatform.iOS //newdefaultTargetPlatform用于识别操作系统
-          ? kIOSTheme //new
+              TargetPlatform.iOS //defaultTargetPlatform用于识别操作系统
+          ? kIOSTheme 
           : kDefaultTheme,
       home: ChatScreen(), //主页面为用户自定义ChatScreen控件
     );
@@ -170,7 +170,7 @@ class ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
           title: Text("Friendlychat"),
           elevation: Theme.of(context).platform == TargetPlatform.iOS
               ? 0.0
-              : 4.0), //new  适配IOS的扁平化无阴影效果
+              : 4.0), //适配IOS的扁平化无阴影效果
       //页面标题
       body: SafeArea(
         child: Container(

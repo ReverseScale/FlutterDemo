@@ -1,4 +1,4 @@
-import 'package:network_app/model/item_model.dart';
+import '../model/item_model.dart';
 
 class SearchModel {
   int total_count;

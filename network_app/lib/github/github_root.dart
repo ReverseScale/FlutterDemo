@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
-import 'package:network_app/model/search_model.dart';
-import 'package:network_app/model/item_model.dart';
-import 'package:network_app/github/detail.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-import 'provider_block.dart';
+
+import '../model/search_model.dart';
+import '../model/item_model.dart';
+import '../github/detail.dart';
+import '../model/provider_block.dart';
 
 class MyApp extends StatelessWidget {
   final ThemeData kIOSTheme = new ThemeData(

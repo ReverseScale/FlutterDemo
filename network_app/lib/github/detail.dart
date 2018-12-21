@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:network_app/model/item_model.dart';
 
 class DetailViewTab extends StatelessWidget {

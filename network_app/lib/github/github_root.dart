@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:network_app/model/search_model.dart';
 import 'package:network_app/model/item_model.dart';
-import 'package:network_app/detail.dart';
+import 'package:network_app/github/detail.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';

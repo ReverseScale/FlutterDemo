@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:hello_flutter_app/BasisApp.dart';
+// import 'package:bottom_tab_bar/bottom_tab_bar.dart';
+import 'package:hello_flutter_app/ChatsApp.dart';
+
+import 'tabbar/bottom_tab_bar.dart';
 
 class HomeTPage extends StatefulWidget {
   @override
@@ -165,6 +169,81 @@ class TabPage extends StatelessWidget {
           ),
         ),
         body: Center(),
+      ),
+    );
+  }
+}
+
+
+class HomeState extends StatefulWidget {
+  @override
+  _HomeStateState createState() => _HomeStateState();
+}
+
+class _HomeStateState extends State<HomeState> with SingleTickerProviderStateMixin {
+
+  TabController _tabController;
+  int _selectedIndex = 1;
+  String badgeNo1;
+  var titles = ['home', 'video', 'find', 'smallvideo', 'my'];
+  var icons = [
+    Icons.home,
+    Icons.play_arrow,
+    Icons.child_friendly,
+    Icons.fiber_new,
+    Icons.mic_none
+  ];
+  @override
+  void initState() {
+    super.initState();
+    _tabController =
+        new TabController(vsync: this, initialIndex: 1, length: titles.length);
+    badgeNo1 = '12';
+  }
+
+  void _onItemSelected(int index) {
+    setState(() {
+      _selectedIndex = index;
+      badgeNo1 = '';
+    });
+  }
+
+  final _widgetOptions = [
+    FriendlychatApp(),
+    Text('Index 1: Video'),
+    Text('Index 2: find someone'),
+    Text('Index 3: small Video'),
+    Text('Index 4: My'),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      // appBar: AppBar(
+      //   title: Text('Bottom Tab Bar'),
+      //   actions: <Widget>[new Icon(Icons.photo_camera)],
+      // ),
+      bottomNavigationBar: BottomTabBar(
+        items: <BottomTabBarItem>[
+          BottomTabBarItem(
+              icon: Icon(icons[0]), title: Text(titles[0]), badgeNo: badgeNo1),
+          BottomTabBarItem(icon: Icon(icons[1]), title: Text(titles[1])),
+          BottomTabBarItem(icon: Icon(icons[2]), title: Text(titles[2])),
+          BottomTabBarItem(
+              icon: Icon(icons[3]),
+              activeIcon: Icon(icons[3]),
+              title: Text(titles[3])),
+          BottomTabBarItem(icon: Icon(icons[4]), title: Text(titles[4])),
+        ],
+        fixedColor: Colors.blue,
+        currentIndex: _selectedIndex,
+        onTap: _onItemSelected,
+        type: BottomTabBarType.fixed,
+        isAnimation: false,
+        isInkResponse: false,
+        badgeColor: Colors.green,
+      ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
     );
   }

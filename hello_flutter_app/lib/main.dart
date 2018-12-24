@@ -27,14 +27,15 @@ void main() {
   // ));
 
   // Tab
-  // runApp(MaterialApp(
-  //   title: 'Tab',
-  //   home: HomeTPage()
-  // ));
+  runApp(MaterialApp(
+    title: 'Tab',
+    home: HomeState()
+  ));
 
   // Chats
-  runApp(new FriendlychatApp());
+  // runApp(new FriendlychatApp());
 
   // 动画练习
   // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
+  
 }

@@ -9,6 +9,7 @@ import 'package:hello_flutter_app/TabApp.dart';
 import 'package:hello_flutter_app/ChatsApp.dart';
 import 'package:hello_flutter_app/TouchApp.dart';
 import 'package:hello_flutter_app/DataApp.dart';
+import 'package:hello_flutter_app/SQListApp.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -45,6 +46,6 @@ void main() {
 
   runApp(MaterialApp(
     title: 'Data',
-    home: SaveAndLoad(),
+    home: SQList(),
   ));
 }

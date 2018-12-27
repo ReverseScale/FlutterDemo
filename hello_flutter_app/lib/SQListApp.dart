@@ -30,7 +30,7 @@ class _SQListState extends State<SQList> {
           icon: const Icon(Icons.view_list),
           tooltip: '保存',
           onPressed: () {
-            navigateToEmployeeList();
+            navigateToAddressList();
           },
         ),
       ]),
@@ -94,7 +94,7 @@ class _SQListState extends State<SQList> {
     scaffoldKey.currentState.showSnackBar(SnackBar(content: Text(text)));
   }
 
-  void navigateToEmployeeList() {
+  void navigateToAddressList() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => AddressList()),

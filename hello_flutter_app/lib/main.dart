@@ -10,6 +10,7 @@ import 'package:hello_flutter_app/ChatsApp.dart';
 import 'package:hello_flutter_app/TouchApp.dart';
 import 'package:hello_flutter_app/DataApp.dart';
 import 'package:hello_flutter_app/SQListApp.dart';
+import 'package:hello_flutter_app/TodoApp.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -44,8 +45,15 @@ void main() {
   // 手势练习
   // runApp(MaterialApp(title: 'Touch', home: TouchState()));
 
+  // 数据存储
+  // runApp(MaterialApp(
+  //   title: 'Data',
+  //   home: SQList(),
+  // ));
+
+  // UI 练习
   runApp(MaterialApp(
-    title: 'Data',
-    home: SQList(),
+    title: 'UI 练习',
+    home: TodoApp()
   ));
 }

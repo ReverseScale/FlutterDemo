@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'package:hello_flutter_app/TodoPage.dart';
 
+class RootApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo',
+      home: TodoApp(),
+      routes: <String, WidgetBuilder>{
+        '/page': (BuildContext context) => TodoPage()
+      },
+    );
+  }
+}
+
 class TodoApp extends StatefulWidget {
   @override
   _TodoAppState createState() => _TodoAppState();
@@ -20,45 +33,48 @@ class _TodoAppState extends State<TodoApp> {
   var level6Color = Colors.yellow[700];
 
   Widget todoCard(String title, String text, String time, Color levelColor) =>
-      Card(
+      Container(
+        child: Card(
           child: Padding(
-        padding: const EdgeInsets.fromLTRB(10, 15, 20, 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(3.0),
-              child: Container(
-                color: levelColor,
-                padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
-                child: Text(
-                  title,
-                  style: TextStyle(fontSize: 16.0, color: Colors.white),
+            padding: const EdgeInsets.fromLTRB(10, 15, 20, 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(3.0),
+                  child: Container(
+                    color: levelColor,
+                    padding: const EdgeInsets.fromLTRB(8, 3, 8, 3),
+                    child: Text(
+                      title,
+                      style: TextStyle(fontSize: 16.0, color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 24, 0, 20),
-                child: Text(
-                  text,
-                  style: TextStyle(fontSize: 14.0, color: Colors.black87),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 24, 0, 20),
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: 14.0, color: Colors.black87),
+                    ),
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
-                child: Text(
-                  time,
-                  style: TextStyle(fontSize: 14.0, color: Colors.black54),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
+                    child: Text(
+                      time,
+                      style: TextStyle(fontSize: 14.0, color: Colors.black54),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
-      ));
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -74,11 +90,16 @@ class _TodoAppState extends State<TodoApp> {
         ),
         children: <Widget>[
           GestureDetector(
-            child: todoCard('PRO', 'Painting a illustration.',
+            child: Hero(
+              tag: 'todoCard',
+              child: todoCard('PRO', 'Painting a illustration.',
                 '2018/9/17 pm 9:00', level1Color),
+            ),
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => TodoPage()));
+              // Navigator.of(context).pushNamed('/page');
+              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                return TodoPage();
+              }));
             },
           ),
           todoCard('100 Day', 'Draw its user interface.', '2018/9/15 pm 11:00',

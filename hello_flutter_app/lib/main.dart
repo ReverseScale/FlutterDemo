@@ -11,6 +11,8 @@ import 'package:hello_flutter_app/TouchApp.dart';
 import 'package:hello_flutter_app/DataApp.dart';
 import 'package:hello_flutter_app/SQListApp.dart';
 import 'package:hello_flutter_app/TodoApp.dart';
+import 'package:hello_flutter_app/TodoPage.dart';
+
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -52,8 +54,5 @@ void main() {
   // ));
 
   // UI 练习
-  runApp(MaterialApp(
-    title: 'UI 练习',
-    home: TodoApp()
-  ));
+  runApp(RootApp());
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:hello_flutter_app/TodoPage.dart';
+
 class TodoApp extends StatefulWidget {
   @override
   _TodoAppState createState() => _TodoAppState();
@@ -71,8 +73,14 @@ class _TodoAppState extends State<TodoApp> {
           childAspectRatio: 1,
         ),
         children: <Widget>[
-          todoCard('PRO', 'Painting a illustration.', '2018/9/17 pm 9:00',
-              level1Color),
+          GestureDetector(
+            child: todoCard('PRO', 'Painting a illustration.',
+                '2018/9/17 pm 9:00', level1Color),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => TodoPage()));
+            },
+          ),
           todoCard('100 Day', 'Draw its user interface.', '2018/9/15 pm 11:00',
               level2Color),
           todoCard('Taobao', 'Taobao maker festival.', '2018/9/16 am 12:00',
@@ -114,7 +122,7 @@ class _TodoAppState extends State<TodoApp> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.blue,
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

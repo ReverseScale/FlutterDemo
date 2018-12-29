@@ -23,6 +23,8 @@ dependencies:
   path_provider: '>=0.3.0'
   sqflite: any
 
+  flutter_calendar: ^0.0.8
+
   # bottom_tab_bar:
   #   git: https://github.com/LiuC520/flutter_bottom_tab_bar.git
 

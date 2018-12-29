@@ -4,9 +4,9 @@
 * 配置开发环境
 * 安装开发工具
 * Debug 技巧
-* Demo 示例
 * 三方库使用与发布
 * iOS 混编开发（Swift、OC）
+* Demo 示例
 
 ### 配置开发环境
 #### 下载 Flutter
@@ -202,15 +202,6 @@ void someFunction(double offset) {
 使用 Chrome 浏览器打开上图的链接，就可以看到具体的运行状态信息了。
 
 ![](https://user-gold-cdn.xitu.io/2018/12/20/167c990b26e7713c?w=1192&h=646&f=png&s=98449)
-
-### Demo 示例
-
-推荐一个简单的 Demo，用 Flutter 写的可以展示豆瓣 Top250 电影的 Demo：https://github.com/ReverseScale/flutter-demo-topmovies
-
-运行结果如下：
-
-![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d4cd46b14?w=972&h=594&f=png&s=398839)
-
 
 ### 三方库使用与发布
 #### 使用三方库
@@ -448,6 +439,17 @@ flutterViewController.setInitialRoute("route1")
 ```
 
 更多 iOS 与 Flutter 的相互调用，参考 Github Demo 中的 FlutterDemo。
+
+
+### Demo 示例
+
+
+推荐一个简单的 Demo，用 Flutter 写的可以展示豆瓣 Top250 电影的 Demo：https://github.com/ReverseScale/flutter-demo-topmovies
+
+运行结果如下：
+
+![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d4cd46b14?w=972&h=594&f=png&s=398839)
+
 
 ### 相关链接：
 

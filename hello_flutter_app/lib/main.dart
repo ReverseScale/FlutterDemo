@@ -13,6 +13,7 @@ import 'package:hello_flutter_app/SQListApp.dart';
 import 'package:hello_flutter_app/TodoApp.dart';
 import 'package:hello_flutter_app/TodoPage.dart';
 import 'package:hello_flutter_app/TabbarApp.dart';
+import 'package:hello_flutter_app/CupertinoApp.dart';
 
 
 // main 入口方法，进入 MyApp
@@ -57,5 +58,9 @@ void main() {
   // UI 练习
   // runApp(RootApp());
 
-  runApp(TabbarTypeOne());
+  // 几种 Tabbar
+  // runApp(TabbarTypeOne());
+
+  // iOS 风格组件
+  runApp(TabbarType());
 }

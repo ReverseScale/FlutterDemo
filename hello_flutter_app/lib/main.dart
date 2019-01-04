@@ -12,7 +12,7 @@ import 'package:hello_flutter_app/DataApp.dart';
 import 'package:hello_flutter_app/SQListApp.dart';
 import 'package:hello_flutter_app/TodoApp.dart';
 import 'package:hello_flutter_app/TodoPage.dart';
-import 'package:hello_flutter_app/TabbarApp.dart';
+import 'package:hello_flutter_app/ButtomTabbar/TabbarApp.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
 
 
@@ -59,8 +59,8 @@ void main() {
   // runApp(RootApp());
 
   // 几种 Tabbar
-  // runApp(TabbarTypeOne());
+  runApp(TabbarTypeOne());
 
-  // iOS 风格组件
-  runApp(TabbarType());
+  // iOS/Android 风格组件
+  // runApp(TabbarType());
 }

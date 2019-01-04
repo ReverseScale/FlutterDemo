@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hello_flutter_app/common_widgets/platform_switch.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_switch.dart';
 
 class SwitchesPage extends StatefulWidget {
   @override

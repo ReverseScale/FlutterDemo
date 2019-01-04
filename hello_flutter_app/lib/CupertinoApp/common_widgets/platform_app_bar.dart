@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_flutter_app/common_widgets/platform_widget.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_widget.dart';
 
 class PlatformAppBar extends PlatformWidget<CupertinoNavigationBar, AppBar> {
   PlatformAppBar({this.leading, this.title, this.actions});

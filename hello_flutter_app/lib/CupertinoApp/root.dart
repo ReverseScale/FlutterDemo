@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_flutter_app/switches_page.dart';
-import 'package:hello_flutter_app/dialogs_page.dart';
+import 'package:hello_flutter_app/CupertinoApp/switches_page.dart';
+import 'package:hello_flutter_app/CupertinoApp/dialogs_page.dart';
 
 
 class TabbarType extends StatelessWidget {

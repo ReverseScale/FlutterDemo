@@ -2,11 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'package:hello_flutter_app/common_widgets/platform_widget.dart';
-import 'package:hello_flutter_app/common_widgets/platform_alert_dialog.dart';
-import 'package:hello_flutter_app/common_widgets/platform_app_bar.dart';
-import 'package:hello_flutter_app/common_widgets/platform_button.dart';
-import 'package:hello_flutter_app/common_widgets/platform_scaffold.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_alert_dialog.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_app_bar.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_button.dart';
+import 'package:hello_flutter_app/CupertinoApp/common_widgets/platform_scaffold.dart';
 
 class DialogsPage extends StatelessWidget {
 

@@ -9,7 +9,7 @@ import 'package:hello_flutter_app/TabApp.dart';
 import 'package:hello_flutter_app/ChatsApp.dart';
 import 'package:hello_flutter_app/TouchApp.dart';
 import 'package:hello_flutter_app/DataApp.dart';
-import 'package:hello_flutter_app/SQListApp.dart';
+import 'package:hello_flutter_app/SQListApp/root.dart';
 import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/ButtomTabbarApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
@@ -49,13 +49,13 @@ void main() {
   // runApp(MaterialApp(title: 'Touch', home: TouchState()));
 
   // 数据存储
-  // runApp(MaterialApp(
-  //   title: 'Data',
-  //   home: SQList(),
-  // ));
+  runApp(MaterialApp(
+    title: 'Data',
+    home: SQList(),
+  ));
 
   // UI 练习
-  runApp(RootApp());
+  // runApp(RootApp());
 
   // 几种 Tabbar
   // runApp(TabbarTypeOne());

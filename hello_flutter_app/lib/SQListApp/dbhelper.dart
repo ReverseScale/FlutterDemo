@@ -3,7 +3,7 @@ import 'dart:io' as io;
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:hello_flutter_app/SQListApp.dart';
+import 'package:hello_flutter_app/SQListApp/root.dart';
 
 class DBHelper {
   static Database _db;

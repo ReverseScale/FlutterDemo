@@ -12,6 +12,7 @@ import 'package:hello_flutter_app/DataApp.dart';
 import 'package:hello_flutter_app/SQListApp.dart';
 import 'package:hello_flutter_app/TodoApp.dart';
 import 'package:hello_flutter_app/TodoPage.dart';
+import 'package:hello_flutter_app/TabbarApp.dart';
 
 
 // main 入口方法，进入 MyApp
@@ -54,5 +55,7 @@ void main() {
   // ));
 
   // UI 练习
-  runApp(RootApp());
+  // runApp(RootApp());
+
+  runApp(TabbarTypeOne());
 }

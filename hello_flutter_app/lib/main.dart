@@ -1,14 +1,14 @@
 // 引入 UI 库
 import 'package:flutter/material.dart';
 
-import 'package:hello_flutter_app/BasisApp.dart';
-import 'package:hello_flutter_app/NavigationApp.dart';
-import 'package:hello_flutter_app/ComplexApp.dart';
+import 'package:hello_flutter_app/BasisApp/root.dart';
+import 'package:hello_flutter_app/NavigationApp/root.dart';
+import 'package:hello_flutter_app/TravelApp/root.dart';
 import 'package:hello_flutter_app/AnimationApp/root.dart';
-import 'package:hello_flutter_app/TabApp.dart';
-import 'package:hello_flutter_app/ChatsApp.dart';
+import 'package:hello_flutter_app/TabChatsApp/TabApp.dart';
+import 'package:hello_flutter_app/TabChatsApp/ChatsApp.dart';
 import 'package:hello_flutter_app/TouchApp/root.dart';
-import 'package:hello_flutter_app/DataApp.dart';
+import 'package:hello_flutter_app/SQListApp/DataApp.dart';
 import 'package:hello_flutter_app/SQListApp/root.dart';
 import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/ButtomTabbarApp/root.dart';
@@ -20,9 +20,9 @@ import 'package:hello_flutter_app/CupertinoApp/root.dart';
 // void main() => runApp(MyApp());
 void main() {
   // 基础组件
-  // runApp(BasisApp(
-  //   items: new List<String>.generate(1000, (i)=>"$i 号技师")
-  // ));
+  runApp(BasisApp(
+    items: new List<String>.generate(1000, (i)=>"$i 号技师")
+  ));
 
   // 导航跳转
   // runApp(MaterialApp(title: '侧滑菜单', home: SlideMenu()));
@@ -40,10 +40,10 @@ void main() {
   // ));
 
   // Chats
-  // runApp(new FriendlychatApp());
+  // runApp(FriendlychatApp());
 
   // 动画练习
-  runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
+  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
 
   // 手势练习
   // runApp(MaterialApp(title: 'Touch', home: TouchState()));

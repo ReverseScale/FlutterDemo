@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hello_flutter_app/BasisApp.dart';
 import 'package:hello_flutter_app/NavigationApp.dart';
 import 'package:hello_flutter_app/ComplexApp.dart';
-import 'package:hello_flutter_app/AnimationApp.dart';
+import 'package:hello_flutter_app/AnimationApp/root.dart';
 import 'package:hello_flutter_app/TabApp.dart';
 import 'package:hello_flutter_app/ChatsApp.dart';
 import 'package:hello_flutter_app/TouchApp/root.dart';
@@ -43,10 +43,10 @@ void main() {
   // runApp(new FriendlychatApp());
 
   // 动画练习
-  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
+  runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
 
   // 手势练习
-  runApp(MaterialApp(title: 'Touch', home: TouchState()));
+  // runApp(MaterialApp(title: 'Touch', home: TouchState()));
 
   // 数据存储
   // runApp(MaterialApp(

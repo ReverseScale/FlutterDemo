@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hello_flutter_app/TabbarApp.dart';
+import 'package:hello_flutter_app/switches_page.dart';
+import 'package:hello_flutter_app/dialogs_page.dart';
+
 
 class TabbarType extends StatelessWidget {
   @override
@@ -18,28 +20,17 @@ class CuperHomeApp extends StatefulWidget {
 
 class _CuperHomeAppState extends State<CuperHomeApp> {
   int _index = 0;
-  final List<Widget> _children = [Pageone(), Pagetwo(), Pagethree()];
+  final List<Widget> _children = [SwitchesPage(),DialogsPage()];
   @override
   Widget build(BuildContext context) {
-//     return CupertinoPageScaffold(
-//       navigationBar: CupertinoNavigationBar(
-//         leading: Icon(CupertinoIcons.back),
-//         middle: Text('iOS'),
-//         trailing: Icon(CupertinoIcons.search),
-//       ),
-//       backgroundColor: CupertinoColors.white,
-//       child: Text('data')
-//     );
     return Scaffold(
       body: _children[_index],
       bottomNavigationBar: CupertinoTabBar(
         currentIndex: _index,
         onTap: onTabTapped,
         items: [
-          BottomNavigationBarItem(title: Text('aaa'), icon: Icon(Icons.home)),
-          BottomNavigationBarItem(title: Text('bbb'), icon: Icon(Icons.list)),
-          BottomNavigationBarItem(
-              title: Text('ccc'), icon: Icon(Icons.message)),
+          BottomNavigationBarItem(title: Text('Switches'), icon: Icon(Icons.home)),
+          BottomNavigationBarItem(title: Text('Switches'), icon: Icon(Icons.list)),
         ],
       ),
     );
@@ -52,81 +43,3 @@ class _CuperHomeAppState extends State<CuperHomeApp> {
   }
 }
 
-// class BottomBarApp extends StatefulWidget {
-//   @override
-//   _BottomBarAppState createState() => _BottomBarAppState();
-// }
-
-// class _BottomBarAppState extends State<BottomBarApp> {
-//   int _index = 0;
-//   final List<Widget> _children = [Pageone(), Pagetwo(), Pagethree()];
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: _children[_index],
-//       bottomNavigationBar: CupertinoTabBar(
-//         currentIndex: _index,
-//         onTap: onTabTapped,
-//         items: [
-//           BottomNavigationBarItem(title: Text('aaa'), icon: Icon(Icons.home)),
-//           BottomNavigationBarItem(title: Text('bbb'), icon: Icon(Icons.list)),
-//           BottomNavigationBarItem(
-//               title: Text('ccc'), icon: Icon(Icons.message)),
-//         ],
-//       ),
-//     );
-//   }
-
-//   void onTabTapped(int index) {
-//     setState(() {
-//       _index = index;
-//     });
-//   }
-// }
-
-
-// 子页面
-// class Pageone extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoPageScaffold(
-//       navigationBar: CupertinoNavigationBar(
-//         leading: Icon(CupertinoIcons.back),
-//         middle: Text('iOS'),
-//         trailing: Icon(CupertinoIcons.search),
-//       ),
-//       backgroundColor: CupertinoColors.white,
-//       child: Text('data')
-//     );
-//   }
-// }
-
-// class Pagetwo extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoPageScaffold(
-//       navigationBar: CupertinoNavigationBar(
-//         leading: Icon(CupertinoIcons.back),
-//         middle: Text('iOS'),
-//         trailing: Icon(CupertinoIcons.search),
-//       ),
-//       backgroundColor: CupertinoColors.white,
-//       child: Text('data')
-//     );
-//   }
-// }
-
-// class Pagethree extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return CupertinoPageScaffold(
-//       navigationBar: CupertinoNavigationBar(
-//         leading: Icon(CupertinoIcons.back),
-//         middle: Text('iOS'),
-//         trailing: Icon(CupertinoIcons.search),
-//       ),
-//       backgroundColor: CupertinoColors.white,
-//       child: Text('data')
-//     );
-//   }
-// }

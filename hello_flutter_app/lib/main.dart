@@ -14,6 +14,7 @@ import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/ButtomTabbarApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
 import 'package:hello_flutter_app/RouterAnimationApp/root.dart';
+import 'package:hello_flutter_app/FuzzyApp/root.dart';
 
 
 // main 入口方法，进入 MyApp
@@ -38,7 +39,10 @@ void main() {
   // runApp(TabbarTypeOne());
 
   // 路由动画
-  runApp(RouterAnimationApp());
+  // runApp(RouterAnimationApp());
+
+  // 毛玻璃模糊效果
+  runApp(FuzzyPage());
 
   // Chats
   // runApp(FriendlychatApp());

@@ -15,7 +15,7 @@ import 'package:hello_flutter_app/ButtomTabbarApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
 import 'package:hello_flutter_app/RouterAnimationApp/root.dart';
 import 'package:hello_flutter_app/FuzzyApp/root.dart';
-
+import 'package:hello_flutter_app/TopBarApp/root.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -29,20 +29,23 @@ void main() {
   // 导航跳转
   // runApp(MaterialApp(title: '导航', home: Navigation()));
 
-  // Tab
+  // 几种底部 Tabbar
+  // runApp(TabbarTypeOne());
+
+  // Tab 封装库
   // runApp(MaterialApp(
   //   title: 'Tab',
   //   home: HomeState()
   // ));
 
-  // 几种底部 Tabbar
-  // runApp(TabbarTypeOne());
+  // 顶部导航栏 Tabbar
+  runApp(TopHome());
 
   // 路由动画
   // runApp(RouterAnimationApp());
 
   // 毛玻璃模糊效果
-  runApp(FuzzyPage());
+  // runApp(FuzzyPage());
 
   // Chats
   // runApp(FriendlychatApp());

@@ -13,6 +13,7 @@ import 'package:hello_flutter_app/SQListApp/root.dart';
 import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/ButtomTabbarApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
+import 'package:hello_flutter_app/RouterAnimationApp/root.dart';
 
 
 // main 入口方法，进入 MyApp
@@ -34,7 +35,10 @@ void main() {
   // ));
 
   // 几种底部 Tabbar
-  runApp(TabbarTypeOne());
+  // runApp(TabbarTypeOne());
+
+  // 路由动画
+  runApp(RouterAnimationApp());
 
   // Chats
   // runApp(FriendlychatApp());

@@ -7,14 +7,17 @@ class TabbarTypeOne extends StatelessWidget {
     return MaterialApp(
       // 基础 底部导航栏
       // home: TabbarStyleApp(),
-      
+
       // 两种平台风格 底部导航栏
       // home: BottomBarApp(),
 
-      // 自定义样式 底部导航栏
+      // 自定义样式 底部工具栏
       home: CustomTabBarApp(),
       title: 'BottomTabBar',
-      theme: ThemeData.light(),
+      // theme: ThemeData.light(),
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue
+      ),
     );
   }
 }
@@ -50,6 +53,7 @@ class _CustomTabBarAppState extends State<CustomTabBarApp> {
             return Pagethree();
           }));
         },
+        tooltip: '长按我干啥',
         child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

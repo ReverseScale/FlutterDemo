@@ -20,18 +20,12 @@ import 'package:hello_flutter_app/CupertinoApp/root.dart';
 // void main() => runApp(MyApp());
 void main() {
   // 基础组件
-  runApp(BasisApp(
-    items: new List<String>.generate(1000, (i)=>"$i 号技师")
-  ));
+  // runApp(BasisApp(
+  //   items: new List<String>.generate(1000, (i)=>"$i 号技师")
+  // ));
 
   // 导航跳转
-  // runApp(MaterialApp(title: '侧滑菜单', home: SlideMenu()));
-
-  // UI 练习
-  // runApp(MaterialApp(
-  //   title: 'UI 练习',
-  //   home: TravelHome()
-  // ));
+  // runApp(MaterialApp(title: '导航', home: Navigation()));
 
   // Tab
   // runApp(MaterialApp(
@@ -39,14 +33,20 @@ void main() {
   //   home: HomeState()
   // ));
 
+  // 几种底部 Tabbar
+  runApp(TabbarTypeOne());
+
   // Chats
   // runApp(FriendlychatApp());
 
-  // 动画练习
-  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
+  // iOS/Android 风格组件
+  // runApp(TabbarType());
 
   // 手势练习
   // runApp(MaterialApp(title: 'Touch', home: TouchState()));
+
+  // 动画练习
+  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
 
   // 数据存储
   // runApp(MaterialApp(
@@ -54,12 +54,12 @@ void main() {
   //   home: SQList(),
   // ));
 
-  // UI 练习
+  // UI 练习: 旅行详情页
+  // runApp(MaterialApp(
+  //   title: 'UI 练习',
+  //   home: TravelHome()
+  // ));
+
+  // UI 练习: ToDoList
   // runApp(RootApp());
-
-  // 几种 Tabbar
-  // runApp(TabbarTypeOne());
-
-  // iOS/Android 风格组件
-  // runApp(TabbarType());
 }

@@ -5,9 +5,16 @@ class TabbarTypeOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // 基础 底部导航栏
       // home: TabbarStyleApp(),
+      
+      // 两种平台风格 底部导航栏
       // home: BottomBarApp(),
+
+      // 自定义样式 底部导航栏
       home: CustomTabBarApp(),
+      title: 'BottomTabBar',
+      theme: ThemeData.light(),
     );
   }
 }
@@ -97,34 +104,73 @@ class BottomBarApp extends StatefulWidget {
 
 class _BottomBarAppState extends State<BottomBarApp> {
   int _index = 0;
-  final List<Widget> _children = [Pageone(), Pagetwo(), Pagethree()];
+  Color _bottomNavigationColor = Colors.blue;
+  final List<Widget> _childrenList = [Pageone(), Pagetwo(), Pagethree()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _children[_index],
+      body: _childrenList[_index],
       // Android 风格
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: _index,
-      //   onTap: onTabTapped,
-      //   items: [
-      //     BottomNavigationBarItem(title: Text('aaa'), icon: Icon(Icons.home)),
-      //     BottomNavigationBarItem(title: Text('bbb'), icon: Icon(Icons.list)),
-      //     BottomNavigationBarItem(
-      //         title: Text('ccc'), icon: Icon(Icons.message)),
-      //   ],
-      // ),
-
-      // iOS 风格
-      bottomNavigationBar: CupertinoTabBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _index,
         onTap: onTabTapped,
         items: [
-          BottomNavigationBarItem(title: Text('aaa'), icon: Icon(Icons.home)),
-          BottomNavigationBarItem(title: Text('bbb'), icon: Icon(Icons.list)),
           BottomNavigationBarItem(
-              title: Text('ccc'), icon: Icon(Icons.message)),
+              title: Text(
+                'Home',
+                style: TextStyle(color: _bottomNavigationColor),
+              ),
+              icon: Icon(
+                Icons.home,
+                color: _bottomNavigationColor,
+              )),
+          BottomNavigationBarItem(
+              title: Text('Email',
+                  style: TextStyle(color: _bottomNavigationColor)),
+              icon: Icon(
+                Icons.email,
+                color: _bottomNavigationColor,
+              )),
+          BottomNavigationBarItem(
+              title: Text('Game',
+                  style: TextStyle(color: _bottomNavigationColor)),
+              icon: Icon(
+                Icons.videogame_asset,
+                color: _bottomNavigationColor,
+              )),
         ],
       ),
+
+      // iOS 风格
+      // bottomNavigationBar: CupertinoTabBar(
+      //   currentIndex: _index,
+      //   onTap: onTabTapped,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         title: Text(
+      //           'Home',
+      //           style: TextStyle(color: _bottomNavigationColor),
+      //         ),
+      //         icon: Icon(
+      //           Icons.home,
+      //           color: _bottomNavigationColor,
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: Text('Email',
+      //             style: TextStyle(color: _bottomNavigationColor)),
+      //         icon: Icon(
+      //           Icons.email,
+      //           color: _bottomNavigationColor,
+      //         )),
+      //     BottomNavigationBarItem(
+      //         title: Text('Airplay',
+      //             style: TextStyle(color: _bottomNavigationColor)),
+      //         icon: Icon(
+      //           Icons.airplay,
+      //           color: _bottomNavigationColor,
+      //         )),
+      //   ],
+      // ),
     );
   }
 

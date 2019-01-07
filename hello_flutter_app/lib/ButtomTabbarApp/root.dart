@@ -40,7 +40,7 @@ class _CustomTabBarAppState extends State<CustomTabBarApp> {
   @override
   void initState() {
     super.initState();
-    list..add(Pageone())..add(Pagetwo())..add(Pagethree());
+    list..add(EachPages('Roter'))..add(EachPages('GPS'));
   }
 
   @override
@@ -239,7 +239,7 @@ class _TabbarStyleAppState extends State<TabbarStyleApp>
   }
 }
 
-// 子页面
+// 静态子页面
 class Pageone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -307,6 +307,26 @@ class Pagethree extends StatelessWidget {
         title: Text('Page 3'),
       ),
       body: Text('03'),
+    );
+  }
+}
+
+// 动态子页面
+class EachPages extends StatefulWidget {
+  String _title;
+  EachPages(this._title);
+  @override
+  _EachPagesState createState() => _EachPagesState();
+}
+
+class _EachPagesState extends State<EachPages> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget._title),),
+      body: Center(
+        child: Text(widget._title),
+      ),
     );
   }
 }

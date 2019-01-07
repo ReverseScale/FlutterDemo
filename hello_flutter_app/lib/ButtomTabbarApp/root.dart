@@ -50,7 +50,7 @@ class _CustomTabBarAppState extends State<CustomTabBarApp> {
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return Pagethree();
+            return EachPages('Add');
           }));
         },
         tooltip: '长按我干啥',

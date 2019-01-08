@@ -18,6 +18,7 @@ import 'package:hello_flutter_app/FuzzyApp/root.dart';
 import 'package:hello_flutter_app/TopBarApp/root.dart';
 import 'package:hello_flutter_app/SearchAPP/root.dart';
 import 'package:hello_flutter_app/FlowLayoutApp/root.dart';
+import 'package:hello_flutter_app/ExpansionApp/root.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -47,7 +48,10 @@ void main() {
   // runApp(SearchApp());
 
   // 流式布局
-  runApp(FlowLayoutApp());
+  // runApp(FlowLayoutApp());
+
+  // 展开闭合
+  runApp(ExpansionApp());
 
   // 路由动画
   // runApp(RouterAnimationApp());

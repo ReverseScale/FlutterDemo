@@ -16,6 +16,7 @@ import 'package:hello_flutter_app/CupertinoApp/root.dart';
 import 'package:hello_flutter_app/RouterAnimationApp/root.dart';
 import 'package:hello_flutter_app/FuzzyApp/root.dart';
 import 'package:hello_flutter_app/TopBarApp/root.dart';
+import 'package:hello_flutter_app/SearchAPP/root.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -39,7 +40,10 @@ void main() {
   // ));
 
   // 顶部导航栏 Tabbar
-  runApp(TopHome());
+  // runApp(TopHome());
+
+  // 搜索栏
+  runApp(SearchApp());
 
   // 路由动画
   // runApp(RouterAnimationApp());

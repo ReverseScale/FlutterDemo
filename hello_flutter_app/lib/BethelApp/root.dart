@@ -52,12 +52,12 @@ class WaterClipper extends CustomClipper<Path> {
 
     path.lineTo(size.width / 2, size.height - volatility);
 
-    var topControlPoint = Offset(size.width / 4 * 3, size.height - 80);
-    var topEndPoint = Offset(size.width, size.height - 40);
+    var topControlPoint = Offset(size.width / 4 * 3, size.height - volatility * 2);
+    var topEndPoint = Offset(size.width, size.height - volatility);
     path.quadraticBezierTo(
         topControlPoint.dx, topControlPoint.dy, topEndPoint.dx, topEndPoint.dy);
 
-    path.lineTo(size.width, size.height - 40);
+    path.lineTo(size.width, size.height - volatility);
     path.lineTo(size.width, 0);
 
     return path;

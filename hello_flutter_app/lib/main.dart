@@ -20,7 +20,7 @@ import 'package:hello_flutter_app/SearchAPP/root.dart';
 import 'package:hello_flutter_app/FlowLayoutApp/root.dart';
 import 'package:hello_flutter_app/ExpansionApp/root.dart';
 import 'package:hello_flutter_app/BethelApp/root.dart';
-
+import 'package:hello_flutter_app/LoadApp/root.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -56,7 +56,10 @@ void main() {
   // runApp(ExpansionApp());
 
   // 贝塞尔曲线
-  runApp(BethelApp());
+  // runApp(BethelApp());
+
+  // 加载图
+  runApp(LoadApp());
 
   // 路由动画
   // runApp(RouterAnimationApp());

@@ -24,7 +24,8 @@ class BethelHome extends StatelessWidget {
         children: <Widget>[
           // 路径裁切
           ClipPath(
-            clipper: BottomClipper(),
+            // clipper: ArcClipper(),
+            clipper: WaterClipper(),
             child: Container(
               color: Colors.blue,
               height: 200.0,
@@ -36,9 +37,40 @@ class BethelHome extends StatelessWidget {
   }
 }
 
-class BottomClipper extends CustomClipper<Path> {
+class WaterClipper extends CustomClipper<Path> {
+  var volatility = 40;
   @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0, 0);
+    path.lineTo(0, size.height - volatility);
 
+    var bottomControlPoint = Offset(size.width / 4, size.height);
+    var bottomEndPoint = Offset(size.width / 2, size.height - volatility);
+    path.quadraticBezierTo(bottomControlPoint.dx, bottomControlPoint.dy,
+        bottomEndPoint.dx, bottomEndPoint.dy);
+
+    path.lineTo(size.width / 2, size.height - volatility);
+
+    var topControlPoint = Offset(size.width / 4 * 3, size.height - 80);
+    var topEndPoint = Offset(size.width, size.height - 40);
+    path.quadraticBezierTo(
+        topControlPoint.dx, topControlPoint.dy, topEndPoint.dx, topEndPoint.dy);
+
+    path.lineTo(size.width, size.height - 40);
+    path.lineTo(size.width, 0);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
+
+class ArcClipper extends CustomClipper<Path> {
+  @override
   Path getClip(Size size) {
     var path = Path();
     path.lineTo(0, 0);
@@ -56,7 +88,7 @@ class BottomClipper extends CustomClipper<Path> {
   }
 
   @override
-    bool shouldReclip(CustomClipper<Path> oldClipper) {
-      return false;
-    }
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return false;
+  }
 }

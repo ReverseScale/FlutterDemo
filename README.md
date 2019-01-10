@@ -443,12 +443,15 @@ flutterViewController.setInitialRoute("route1")
 
 ### Demo 示例
 
-1）Top250 电影
-推荐一个简单的 Demo，用 Flutter 写的可以展示豆瓣 Top250 电影的 Demo：https://github.com/ReverseScale/flutter-demo-topmovies
+1）基础功能演示
 
-运行结果如下：
+```
+cd FlutterDemo/hello_flutter_app/lib/main.dart
+```
 
-![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d4cd46b14?w=972&h=594&f=png&s=398839)
+实现功能如下：
+
+![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/19-1-10/43734919.jpg)
 
 2）Todolist UI
 

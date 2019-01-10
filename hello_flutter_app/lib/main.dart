@@ -22,6 +22,8 @@ import 'package:hello_flutter_app/ExpansionApp/root.dart';
 import 'package:hello_flutter_app/BethelApp/root.dart';
 import 'package:hello_flutter_app/LoadApp/root.dart';
 import 'package:hello_flutter_app/GesturesBackApp/root.dart';
+import 'package:hello_flutter_app/ExtendedTabs/root.dart';
+
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -63,7 +65,10 @@ void main() {
   // runApp(LoadApp());
 
   // 侧滑手势返回
-  runApp(GesturesBackApp());
+  // runApp(GesturesBackApp());
+
+  // 嵌套 Tabbar 导航栏
+  runApp(MyApp());
 
   // 路由动画
   // runApp(RouterAnimationApp());

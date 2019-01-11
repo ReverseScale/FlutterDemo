@@ -480,7 +480,7 @@ cd FlutterDemo/hello_flutter_app/lib/ChatsApp.dart
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-29/99893081.jpg)
 
-### 📚 相关链接：
+### 📚 相关链接
 
 Flutter 中国：https://flutter.io/community/china
 
@@ -491,8 +491,8 @@ Flutter Github Wiki:
 https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#experiment-integrate-flutterviewcontroller
 
 
-### 😬 Contributions
+### 😬 联系
 
-WeChat : WhatsXie
-Email : ReverseScale@iCloud.com
-Blog : https://reversescale.github.io
+* WeChat : WhatsXie
+* Email : ReverseScale@iCloud.com
+* Blog : https://reversescale.github.io

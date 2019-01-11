@@ -13,9 +13,7 @@
 ### 🛠 配置开发环境
 #### 下载 Flutter
 
-推荐去官网下载，速度并不慢，网址：
-
-https://flutter.io/setup-macos/
+推荐去官网下载，速度并不慢，网址：https://flutter.io/setup-macos/
 
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d47fa55f6?w=1582&h=414&f=png&s=63434)
 

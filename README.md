@@ -1,6 +1,6 @@
 # FlutterDemo
 
-### 内容大纲：
+### 📜 内容大纲：
 * 配置开发环境
 * 安装开发工具
 * Debug 技巧
@@ -8,7 +8,9 @@
 * iOS 混编开发（Swift、OC）
 * Demo 示例
 
-### 配置开发环境
+█◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢█
+
+### 🛠 配置开发环境
 #### 下载 Flutter
 
 推荐去官网下载，速度并不慢，网址：
@@ -101,7 +103,7 @@ Downloading ios-release tools...                             3.2s
 Downloading Gradle Wrapper...                                0.1s
 ```
 
-### 安装开发工具
+### 🔨 安装开发工具
 #### Android Studio 
 官方地址：https://developer.android.com/studio/
 
@@ -164,7 +166,7 @@ Xcode 需要 macOS 系统的支持，如果用的是 MacBook，打开 App Store 
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167aabcc6ade980e?w=1300&h=274&f=png&s=26614)
 
 
-### Debug 技巧
+### 🐛 Debug 技巧
 
 这里以 VSCode 做为 Dart 编辑工具为例，演示一下常用的 Debug 技巧。
 
@@ -203,7 +205,7 @@ void someFunction(double offset) {
 
 ![](https://user-gold-cdn.xitu.io/2018/12/20/167c990b26e7713c?w=1192&h=646&f=png&s=98449)
 
-### 三方库使用与发布
+### 📦 三方库使用与发布
 #### 使用三方库
 
 Flutter 项目中通过 `pubspec.yaml` 来管理第三方库，在 `pubspec.yaml` 中添加第三方库名称和版本号等信息。
@@ -279,7 +281,7 @@ flutter packages pub publish
 
 更多请阅读 [Flutter 中文网](https://flutterchina.club/developing-packages/#step-1-开发dart包)
 
-### iOS 混编开发（Swift、OC）
+### 📱 iOS 混编开发（Swift、OC）
 #### Cocoapods 引入
 
 完成引入后的目录结构如下：
@@ -441,7 +443,7 @@ flutterViewController.setInitialRoute("route1")
 更多 iOS 与 Flutter 的相互调用，参考 Github Demo 中的 FlutterDemo。
 
 
-### Demo 示例
+### 🎞 Demo 示例
 
 1）基础功能演示
 
@@ -478,7 +480,7 @@ cd FlutterDemo/hello_flutter_app/lib/ChatsApp.dart
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-29/99893081.jpg)
 
-### 相关链接：
+### 📚 相关链接：
 
 Flutter 中国：https://flutter.io/community/china
 

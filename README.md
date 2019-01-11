@@ -480,14 +480,11 @@ cd FlutterDemo/hello_flutter_app/lib/ChatsApp.dart
 
 ### 📚 相关链接
 
-Flutter 中国：https://flutter.io/community/china
-
-Flutter 中文社区：
+* Flutter 中国：https://flutter.io/community/china
+* Flutter 中文社区：
 https://flutter-io.cn/
-
-Flutter Github Wiki:
+* Flutter Github Wiki:
 https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#experiment-integrate-flutterviewcontroller
-
 
 ### 😬 联系
 

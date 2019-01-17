@@ -29,6 +29,9 @@ import 'package:hello_flutter_app/ExtendedTabs/root.dart';
 // 单行调用使用 “=> 函数”
 // void main() => runApp(MyApp());
 void main() {
+  // 错误页面展示
+  setCustomErrorPage();
+
   // 基础组件
   // runApp(BasisApp(
   //   items: new List<String>.generate(1000, (i)=>"$i 号技师")
@@ -68,7 +71,7 @@ void main() {
   // runApp(GesturesBackApp());
 
   // 嵌套 Tabbar 导航栏
-  runApp(MyApp());
+  // runApp(MyApp());
 
   // 路由动画
   // runApp(RouterAnimationApp());
@@ -101,5 +104,14 @@ void main() {
   // ));
 
   // UI 练习: ToDoList
-  // runApp(RootApp());
+  runApp(RootApp());
+}
+
+void setCustomErrorPage(){
+    ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails){
+      print(flutterErrorDetails.toString());
+      return Center(
+        child: Text("Flutter 页面出现故障"),
+      );
+    };
 }

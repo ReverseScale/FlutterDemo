@@ -33,9 +33,9 @@ void main() {
   setCustomErrorPage();
 
   // 基础组件
-  // runApp(BasisApp(
-  //   items: new List<String>.generate(1000, (i)=>"$i 号技师")
-  // ));
+  runApp(BasisApp(
+    // items: new List<String>.generate(1000, (i)=>"$i 号技师")
+  ));
 
   // 导航跳转
   // runApp(MaterialApp(title: '导航', home: Navigation()));
@@ -104,7 +104,7 @@ void main() {
   // ));
 
   // UI 练习: ToDoList
-  runApp(RootApp());
+  // runApp(RootApp());
 }
 
 void setCustomErrorPage(){

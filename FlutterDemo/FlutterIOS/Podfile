@@ -7,7 +7,7 @@ target 'FlutterDemo' do
 
 pod 'Kingfisher', '~> 4.10.1'
 
-flutter_application_path = '/Users/whatsxie/Desktop/FlutterDemo/flutter_module/'
+flutter_application_path = '/Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module'
   eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
 
   # Pods for FlutterDemo

@@ -9,10 +9,11 @@ class TabbarTypeOne extends StatelessWidget {
       // home: TabbarStyleApp(),
 
       // 两种平台风格 底部导航栏
-      // home: BottomBarApp(),
+      home: BottomBarApp(),
 
       // 自定义样式 底部工具栏
-      home: CustomTabBarApp(),
+      // home: CustomTabBarApp(),
+
       title: 'BottomTabBar',
       // theme: ThemeData.light(),
       theme: ThemeData(

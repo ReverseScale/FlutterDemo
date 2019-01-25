@@ -24,6 +24,7 @@ import 'package:hello_flutter_app/LoadApp/root.dart';
 import 'package:hello_flutter_app/GesturesBackApp/root.dart';
 import 'package:hello_flutter_app/ExtendedTabs/root.dart';
 
+import 'root_home.dart';
 
 // main 入口方法，进入 MyApp
 // 单行调用使用 “=> 函数”
@@ -32,10 +33,10 @@ void main() {
   // 错误页面展示
   setCustomErrorPage();
 
+  runApp(RootHomeBottomBar());
+
   // 基础组件
-  runApp(BasisApp(
-    // items: new List<String>.generate(1000, (i)=>"$i 号技师")
-  ));
+  // runApp(BasisApp());
 
   // 导航跳转
   // runApp(MaterialApp(title: '导航', home: Navigation()));

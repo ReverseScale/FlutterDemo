@@ -20,7 +20,7 @@ class BasisApp extends StatelessWidget {
             //     title: Text('Flutter'),
             // ),
             appBar: AppBar(title: Text('Flutter Navigation')),
-            body: CardLayout()));
+            body: SlideMenu()));
   }
 }
 
@@ -391,7 +391,7 @@ class SlideMenu extends StatelessWidget {
               trailing: Icon(Icons.settings),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.of(context).push(new MaterialPageRoute(
+                Navigator.of(context).push(MaterialPageRoute(
                     builder: (BuildContext context) => SettingsPage()));
               },
             ),

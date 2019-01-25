@@ -25,7 +25,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _index = 0;
   Color _bottomNavigationColor = Colors.blue;
-  final List<Widget> _childrenList = [Pagetwo(), Pagethree()];
+  final List<Widget> _childrenList = [WeigetPage(), Pagethree()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,5 +61,3 @@ class _BottomBarState extends State<BottomBar> {
     });
   }
 }
-
-

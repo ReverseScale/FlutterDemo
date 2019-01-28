@@ -25,15 +25,25 @@ class _SQListState extends State<SQList> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(title: Text('新增联系人'), actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.view_list),
-          tooltip: '保存',
-          onPressed: () {
-            navigateToAddressList();
-          },
+      appBar: AppBar(
+        title: Text(
+          '新增联系人',
+          style: TextStyle(color: Colors.white),
         ),
-      ]),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.view_list),
+            tooltip: '保存',
+            onPressed: () {
+              navigateToAddressList();
+            },
+          ),
+        ],
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -108,7 +118,6 @@ Future<List<Employee>> fetchEmployeesFromDatabase() async {
   return employees;
 }
 
-
 // 通讯录列表
 class AddressList extends StatefulWidget {
   @override
@@ -120,7 +129,14 @@ class _AddressListState extends State<AddressList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('通讯录'),
+        title: Text(
+          '通讯录',
+          style: TextStyle(color: Colors.white),
+        ),
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
@@ -156,8 +172,6 @@ class _AddressListState extends State<AddressList> {
     );
   }
 }
-
-
 
 // Model
 class Employee {

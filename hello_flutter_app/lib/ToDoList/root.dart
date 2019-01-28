@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:hello_flutter_app/ToDoListApp/todo_page.dart';
+import 'package:hello_flutter_app/ToDoList/todo_page.dart';
 
 class RootApp extends StatelessWidget {
   @override

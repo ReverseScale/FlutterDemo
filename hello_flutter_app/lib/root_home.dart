@@ -25,7 +25,7 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _index = 0;
   Color _bottomNavigationColor = Colors.blue;
-  final List<Widget> _childrenList = [WeigetPage(), Pagethree()];
+  final List<Widget> _childrenList = [WeigetPage(), DemoPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
               title: Text('Widget',
                   style: TextStyle(color: _bottomNavigationColor)),
               icon: Icon(
-                Icons.local_pizza,
+                Icons.apps,
                 color: _bottomNavigationColor,
               ),
             ),
@@ -46,7 +46,7 @@ class _BottomBarState extends State<BottomBar> {
               title: Text('Demo',
                   style: TextStyle(color: _bottomNavigationColor)),
               icon: Icon(
-                Icons.apps,
+                Icons.local_pizza,
                 color: _bottomNavigationColor,
               ),
             ),

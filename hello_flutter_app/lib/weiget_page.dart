@@ -15,6 +15,22 @@ import 'Weigets/touch_page.dart';
 class WeigetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var stack = Stack(
+      alignment: const FractionalOffset(0.5, 0.9),
+      children: <Widget>[
+        ClipOval(
+          child: FadeInImage.assetNetwork(
+            placeholder: "",
+            fit: BoxFit.cover,
+            image:
+                "https://avatars2.githubusercontent.com/u/13606492?s=460&v=4",
+            width: 90.0,
+            height: 90.0,
+          ),
+        ),
+      ],
+    );
+
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -23,6 +39,42 @@ class WeigetPage extends StatelessWidget {
           ),
           elevation: 0.0,
         ),
+        // drawer: Drawer(
+        //   child: ListView(
+        //     children: <Widget>[
+        //       stack,
+        //       ListTile(
+        //         title: Text("Github"),
+        //         trailing: Icon(Icons.code),
+        //         onTap: () {
+        //           Navigator.of(context).pop();
+        //           Navigator.of(context).push(new MaterialPageRoute(
+        //               builder: (BuildContext context) => SettingsPage()));
+        //         },
+        //       ),
+        //       Divider(),
+        //       ListTile(
+        //         title: Text("Blog"),
+        //         trailing: Icon(Icons.web),
+        //         onTap: () {
+        //           Navigator.of(context).pop();
+        //           Navigator.of(context).push(new MaterialPageRoute(
+        //               builder: (BuildContext context) => SettingsPage()));
+        //         },
+        //       ),
+        //       Divider(),
+        //       ListTile(
+        //         title: Text("About"),
+        //         trailing: Icon(Icons.info),
+        //         onTap: () {
+        //           Navigator.of(context).pop();
+        //           Navigator.of(context).push(MaterialPageRoute(
+        //               builder: (BuildContext context) => SettingsPage()));
+        //         },
+        //       ),
+        //     ],
+        //   ),
+        // ),
         body: Container(
           color: Colors.grey[100],
           child: GridView(
@@ -123,4 +175,14 @@ class WeigetPage extends StatelessWidget {
           }
         },
       );
+}
+
+class SettingsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('详情页')),
+      body: Center(),
+    );
+  }
 }

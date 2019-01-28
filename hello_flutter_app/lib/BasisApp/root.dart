@@ -24,8 +24,6 @@ class BasisApp extends StatelessWidget {
   }
 }
 
-
-
 // 卡片列表
 class GridViewList extends StatelessWidget {
   @override

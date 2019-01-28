@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class BottomBarPage extends StatelessWidget {
+class TabBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +56,16 @@ class BottomBarPage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => CustomTabBarApp()));
+            },
+          ),
+          GestureDetector(
+            child: ListTile(
+              leading: Icon(Icons.border_top),
+              title: Text('Nested top bar'),
+            ),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => TopBarHome()));
             },
           ),
         ],
@@ -417,8 +427,122 @@ class _EachPagesState extends State<EachPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget._title),
+        title: Text(
+          widget._title,
+          style: TextStyle(color: Colors.white),
+        ),
+        elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
       ),
+      body: Center(
+        child: Text(widget._title),
+      ),
+    );
+  }
+}
+
+class TopBarHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            '导航分栏',
+            style: TextStyle(color: Colors.white),
+          ),
+          elevation: 0.0,
+          iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+          bottom: TabBar(
+            indicatorColor: Colors.blue,
+            tabs: <Widget>[
+              Tab(
+                  child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.code,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 5.0,
+                  ),
+                  Text(
+                    "代码",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              )),
+              Tab(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      Icons.query_builder,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      "问题",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+              Tab(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Icon(
+                      Icons.merge_type,
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(
+                      "提交",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            TopEachPage('代码'),
+            TopEachPage('问题'),
+            TopEachPage('提交')
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TopEachPage extends StatefulWidget {
+  String _title;
+  TopEachPage(this._title);
+  @override
+  _TopEachPageState createState() => _TopEachPageState();
+}
+
+class _TopEachPageState extends State<TopEachPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       body: Center(
         child: Text(widget._title),
       ),

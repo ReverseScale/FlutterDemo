@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hello_flutter_app/BasisApp/root.dart';
 // import 'package:bottom_tab_bar/bottom_tab_bar.dart';
-import 'package:hello_flutter_app/TabChatsApp/ChatsApp.dart';
+import 'package:hello_flutter_app/Chats/ChatsApp.dart';
 
 import 'tabbar/bottom_tab_bar.dart';
 

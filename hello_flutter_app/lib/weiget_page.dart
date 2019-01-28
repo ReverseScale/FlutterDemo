@@ -7,6 +7,9 @@ import 'Weigets/image_page.dart';
 import 'Weigets/color_page.dart';
 import 'Weigets/navigation_page.dart';
 import 'Weigets/bottomBar_page.dart';
+import 'Weigets/search_page.dart';
+import 'Weigets/animation_page.dart';
+
 
 class WeigetPage extends StatelessWidget {
   @override
@@ -34,12 +37,11 @@ class WeigetPage extends StatelessWidget {
               weigetCard(Icon(Icons.image), "Image", context),
               weigetCard(Icon(Icons.color_lens), "Colors", context),
               weigetCard(Icon(Icons.navigation), "Navigation", context),
-
-
               weigetCard(Icon(Icons.tab), "Tabbar", context),
-              weigetCard(Icon(Icons.chat), "Chat", context),
               weigetCard(Icon(Icons.search), "Search", context),
-              weigetCard(Icon(Icons.data_usage), "Data base", context),
+
+
+              // weigetCard(Icon(Icons.data_usage), "Data base", context),
               weigetCard(Icon(Icons.vibration), "Animation", context),
               weigetCard(Icon(Icons.filter_b_and_w), "AD", context),
               weigetCard(Icon(Icons.border_style), "Bethel", context),
@@ -99,6 +101,16 @@ class WeigetPage extends StatelessWidget {
             case "Tabbar":
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => BottomBarPage()));
+              break;
+
+            case "Search":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => SearchPage()));
+              break;
+
+            case "Animation":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => AnimationsPage()));
               break;
 
             default:

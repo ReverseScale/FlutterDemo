@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'asset.dart';
 
-class SearchApp extends StatelessWidget {
+class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Search',
-      theme: ThemeData.light(),
-      home: SearchHome(),
+    return Scaffold(
+      body: SearchHome(),
     );
   }
 }
+
+
 
 class SearchHome extends StatefulWidget {
   @override
@@ -22,8 +21,14 @@ class _SearchHomeState extends State<SearchHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Bar'),
+        title: Text(
+          'Search Bar',
+          style: TextStyle(color: Colors.white),
+        ),
         elevation: 0.0,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.search),
@@ -96,3 +101,14 @@ class searchBarDelegate extends SearchDelegate<String> {
     );
   }
 }
+
+const searchList = [
+    "jiejie-大长腿",
+    "jiejie-小蛮腰",
+    "meimei-技师",
+];
+
+const recentSuggest = [
+    "推荐1",
+    "推荐2"
+];

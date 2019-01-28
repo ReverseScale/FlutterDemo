@@ -6,10 +6,7 @@ import 'package:hello_flutter_app/TravelApp/root.dart';
 import 'package:hello_flutter_app/TouchApp/root.dart';
 import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
-import 'package:hello_flutter_app/FuzzyApp/root.dart';
-import 'package:hello_flutter_app/FlowLayoutApp/root.dart';
 import 'package:hello_flutter_app/ExpansionApp/root.dart';
-import 'package:hello_flutter_app/BethelApp/root.dart';
 import 'package:hello_flutter_app/LoadApp/root.dart';
 import 'package:hello_flutter_app/GesturesBackApp/root.dart';
 import 'package:hello_flutter_app/ExtendedTabs/root.dart';
@@ -27,21 +24,6 @@ void main() {
 
   // 基础组件
   // runApp(BasisApp());
-
-  // Tab 封装库
-  // runApp(MaterialApp(
-  //   title: 'Tab',
-  //   home: HomeState()
-  // ));
-
-  // 流式布局
-  // runApp(FlowLayoutApp());
-
-  // 展开闭合
-  // runApp(ExpansionApp());
-
-  // 贝塞尔曲线
-  // runApp(BethelApp());
 
   // 加载图
   // runApp(LoadApp());

@@ -9,7 +9,7 @@ import 'Weigets/navigation_page.dart';
 import 'Weigets/tabBar_page.dart';
 import 'Weigets/search_page.dart';
 import 'Weigets/bethelPage_page.dart';
-
+import 'Weigets/fuzzy_page.dart';
 
 class WeigetPage extends StatelessWidget {
   @override
@@ -40,11 +40,11 @@ class WeigetPage extends StatelessWidget {
               weigetCard(Icon(Icons.tab), "Tabbar", context),
               weigetCard(Icon(Icons.search), "Search", context),
               weigetCard(Icon(Icons.vibration), "Animation", context),
+              weigetCard(Icon(Icons.border_style), "Bethel", context),
+              weigetCard(Icon(Icons.flip), "Fuzzy", context),
 
               // weigetCard(Icon(Icons.data_usage), "Data base", context),
               // weigetCard(Icon(Icons.filter_b_and_w), "AD", context),
-              weigetCard(Icon(Icons.border_style), "Bethel", context),
-              weigetCard(Icon(Icons.flip), "Fuzzy", context),
               weigetCard(Icon(Icons.toc), "Drawer", context),
               weigetCard(Icon(Icons.phonelink_setup), "Push", context),
             ],
@@ -110,6 +110,11 @@ class WeigetPage extends StatelessWidget {
             case "Bethel":
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => BethelPage()));
+              break;
+
+            case "Fuzzy":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => FuzzyPage()));
               break;
 
             default:

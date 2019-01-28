@@ -1,5 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'dart:math' as math;
+
+class TouchPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: TouchState(),
+    );
+  }
+}
+
+class GesturesBackHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('GesturesBack'),
+      ),
+      child: Center(
+        child: Container(
+          width: 100.0,
+          height: 100.0,
+          color: CupertinoColors.activeBlue,
+          child: CupertinoButton(
+            child: Icon(CupertinoIcons.add),
+            onPressed: (){
+              Navigator.of(context).push(
+                CupertinoPageRoute(
+                  builder: (BuildContext context){
+                    return NextPage();
+                  }
+                )
+              );
+            },
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class NextPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text('Next Page'),
+        leading: GestureDetector(
+          child: Icon(CupertinoIcons.back),
+          onTap: (){
+            Navigator.pop(context);
+          },
+        )
+      ),
+      child: Center(
+        child: Text('Welcome')
+      ),
+    );
+  }
+}
 
 class TouchState extends StatelessWidget {
   @override
@@ -11,6 +71,7 @@ class TouchState extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
+                Divider(),
                 GestureDetector(
                   child: Text('GestureDetector'),
                   onTap: () {
@@ -23,6 +84,7 @@ class TouchState extends StatelessWidget {
                     debugPrint('clicked long');
                   },
                 ),
+                Divider(),
                 Listener(
                   child: Text('Listener'),
                   onPointerMove: (event) {
@@ -38,6 +100,7 @@ class TouchState extends StatelessWidget {
                     debugPrint('onPointerUp');
                   },
                 ),
+                Divider(),
                 AnimWidget(),
                 AnimCurve(),
                 AnimationDemoView(),

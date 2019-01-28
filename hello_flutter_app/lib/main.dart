@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:hello_flutter_app/BasisApp/root.dart';
 import 'package:hello_flutter_app/TravelApp/root.dart';
-import 'package:hello_flutter_app/TouchApp/root.dart';
 import 'package:hello_flutter_app/ToDoListApp/root.dart';
 import 'package:hello_flutter_app/CupertinoApp/root.dart';
-import 'package:hello_flutter_app/ExpansionApp/root.dart';
 import 'package:hello_flutter_app/LoadApp/root.dart';
-import 'package:hello_flutter_app/GesturesBackApp/root.dart';
 import 'package:hello_flutter_app/ExtendedTabs/root.dart';
 
 import 'root_home.dart';
@@ -28,15 +25,8 @@ void main() {
   // 加载图
   // runApp(LoadApp());
 
-  // 侧滑手势返回
-  // runApp(GesturesBackApp());
-
   // 嵌套 Tabbar 导航栏
   // runApp(MyApp());
-
-
-  // 毛玻璃模糊效果
-  // runApp(FuzzyPage());
 
   // Chats
   // runApp(FriendlychatApp());
@@ -44,11 +34,6 @@ void main() {
   // iOS/Android 风格组件
   // runApp(TabbarType());
 
-  // 手势练习
-  // runApp(MaterialApp(title: 'Touch', home: TouchState()));
-
-  // 动画练习
-  // runApp(MaterialApp(title: '动画练习', home: AnimationPage()));
 
   // 数据存储
   // runApp(MaterialApp(

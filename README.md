@@ -1,12 +1,86 @@
 # FlutterDemo
-
-### 📜 内容大纲：
+### 📇 内容大纲：
+* 项目介绍
 * 配置开发环境
 * 安装开发工具
 * Debug 技巧
 * 三方库使用与发布
 * iOS 混编开发（Swift、OC）
-* Demo 示例
+* Demo 演示
+
+### 🗞 项目介绍
+
+#### 官方示例
+目前来看最好的 Flutter 示例工程，功能完善、代码结构清晰。
+
+工程路径：
+```
+/flutter_gallery
+```
+
+| 项目演示首页 | 项目菜单页面 | 项目成品展示 | 项目通讯录页 | 项目控件介绍 | 项目提示控件 |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | 
+| ![kezOnP.png](https://s2.ax1x.com/2019/01/25/kezOnP.png) | ![kezj78.png](https://s2.ax1x.com/2019/01/25/kezj78.png) | ![kmSShQ.png](https://s2.ax1x.com/2019/01/25/kmSShQ.png) | ![kmSC1s.png](https://s2.ax1x.com/2019/01/25/kmSC1s.png) | ![kmSZAU.png](https://s2.ax1x.com/2019/01/25/kmSZAU.png) | ![kmSK39.png](https://s2.ax1x.com/2019/01/25/kmSK39.png) |
+
+Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个系统的图形绘制相关的 Api，所以借助 Hummingbird 可以实现桌面端的渲染工作。
+
+![kmpJrq.png](https://s2.ax1x.com/2019/01/25/kmpJrq.png)
+
+通过 Hummingbird 输出到 macOS 效果：
+
+| 项目演示首页 | 项目菜单页面 | 项目成品展示 |
+| ------------- | ------------- | ------------- |
+| ![km9sfg.png](https://s2.ax1x.com/2019/01/25/km9sfg.png) | ![km9Dk8.png](https://s2.ax1x.com/2019/01/25/km9Dk8.png) | ![kmpTsI.png](https://s2.ax1x.com/2019/01/25/kmpTsI.png) | 
+
+
+#### iOS 原生项目混编
+根据官方文档实现的原生 <-> Flutter 混编示例，Demo 工程使用 Swift 实现，文档部分有 OC、Swift 分别实现方法。
+
+工程路径：
+```
+# Flutter 资源包
+/FlutterDemo/flutter_module 
+
+# iOS 原生工程
+/FlutterDemo/FlutterIOS
+```
+
+> 运行前需要重新设定文件路径，否则 pod install 会报错。
+
+#### Flutter 控件练习
+真正意义上的 Demo 工程，分别演示一些常用的功能控件使用和一些单页面（见底部效果图）。
+
+![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/19-1-10/43734919.jpg)
+
+工程路径：
+```
+/hello_flutter_app
+```
+
+#### Flutter 网络库使用
+使用 dio + rxdart 实现优雅的网络数据请求。
+
+工程路径：
+```
+/network_app
+```
+
+#### Flutter 路由库使用
+使用 fluro 实现灵活的路由管理。
+
+工程路径：
+```
+/router_fluro
+```
+
+#### Cupertino 风格示例
+鉴于目前设计师的出稿风格都是 Apple Design，这里新增 Cupertino 风格示例工程。
+
+工程路径：
+```
+/veggieseasons
+```
+
 
 █◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢█
 
@@ -311,6 +385,10 @@ flutter_application_path = '/Users/whatsxie/Desktop/FlutterDemo/flutter_module/'
 
 > 注：上面的路径需要根据本地位置修改
 
+运行 Demo 工程可能同时需要修改下图的路径：
+
+![kezclR.png](https://s2.ax1x.com/2019/01/25/kezclR.png)
+
 执行 `pod install` 即可完成绑定。
 
 #### 设置脚本
@@ -441,19 +519,9 @@ flutterViewController.setInitialRoute("route1")
 更多 iOS 与 Flutter 的相互调用，参考 Github Demo 中的 FlutterDemo。
 
 
-### 🎞 Demo 示例
+### 🎞 Demo 演示
 
-1）基础功能演示
-
-```
-cd FlutterDemo/hello_flutter_app/lib/main.dart
-```
-
-实现功能如下：
-
-![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/19-1-10/43734919.jpg)
-
-2）Todolist UI
+1）Todolist UI
 
 ```
 cd FlutterDemo/hello_flutter_app/lib/TodoPage.dart
@@ -461,7 +529,7 @@ cd FlutterDemo/hello_flutter_app/lib/TodoPage.dart
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-29/53674347.jpg)
 
-3）SQL数据库 通讯录
+2）SQL数据库 通讯录
 
 ```
 cd FlutterDemo/hello_flutter_app/lib/DataApp.dart
@@ -469,7 +537,7 @@ cd FlutterDemo/hello_flutter_app/lib/DataApp.dart
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-29/63192092.jpg)
 
-4）旅游通信
+3）旅游通信
 
 ```
 cd FlutterDemo/hello_flutter_app/lib/ComplexApp.dart
@@ -491,3 +559,4 @@ https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#experiment-
 * WeChat : WhatsXie
 * Email : ReverseScale@iCloud.com
 * Blog : https://reversescale.github.io
+

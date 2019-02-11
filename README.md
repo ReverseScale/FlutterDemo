@@ -1,5 +1,5 @@
 # FlutterDemo
-### 📇 内容大纲：
+## 📇 内容大纲：
 * 项目介绍
 * 配置开发环境
 * 安装开发工具
@@ -10,7 +10,7 @@
 
 ### 🗞 项目介绍
 
-#### 官方示例
+### 官方示例
 目前来看最好的 Flutter 示例工程，功能完善、代码结构清晰。
 
 工程路径：
@@ -33,7 +33,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 | ![km9sfg.png](https://s2.ax1x.com/2019/01/25/km9sfg.png) | ![km9Dk8.png](https://s2.ax1x.com/2019/01/25/km9Dk8.png) | ![kmpTsI.png](https://s2.ax1x.com/2019/01/25/kmpTsI.png) | 
 
 
-#### iOS 原生项目混编
+### iOS 原生项目混编
 根据官方文档实现的原生 <-> Flutter 混编示例，Demo 工程使用 Swift 实现，文档部分有 OC、Swift 分别实现方法。
 
 工程路径：
@@ -47,7 +47,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 
 > 运行前需要重新设定文件路径，否则 pod install 会报错。
 
-#### Flutter 控件练习
+### Flutter 控件练习
 真正意义上的 Demo 工程，分别演示一些常用的功能控件使用和一些单页面（见底部效果图）。
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/19-1-10/43734919.jpg)
@@ -57,7 +57,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 /hello_flutter_app
 ```
 
-#### Flutter 网络库使用
+### Flutter 网络库使用
 使用 dio + rxdart 实现优雅的网络数据请求。
 
 工程路径：
@@ -65,7 +65,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 /network_app
 ```
 
-#### Flutter 路由库使用
+### Flutter 路由库使用
 使用 fluro 实现灵活的路由管理。
 
 工程路径：
@@ -73,7 +73,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 /router_fluro
 ```
 
-#### Cupertino 风格示例
+### Cupertino 风格示例
 鉴于目前设计师的出稿风格都是 Apple Design，这里新增 Cupertino 风格示例工程。
 
 工程路径：
@@ -84,8 +84,8 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 
 █◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢█
 
-### 🛠 配置开发环境
-#### 下载 Flutter
+## 🛠 配置开发环境
+### 下载 Flutter
 
 推荐去官网下载，速度并不慢，网址：https://flutter.io/setup-macos/
 
@@ -97,7 +97,7 @@ Flutter 通过跨平台的 Skia 图形库来实现图形渲染，只依赖各个
 git clone -b alpha https://github.com/flutter/flutter.git
 ```
 
-#### 配置环境变量
+### 配置环境变量
 
 下载或者克隆完成后，到 flutter 所在目录，配置环境变量。
 
@@ -138,7 +138,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export PATH="$PWD/flutter/bin:$PATH"
 ```
 
-#### 使用 flutter doctor 命令进行安装检查
+### 使用 flutter doctor 命令进行安装检查
 
 运行 doctor 安装 Dart SDK 和工具包
 ```
@@ -175,8 +175,8 @@ Downloading ios-release tools...                             3.2s
 Downloading Gradle Wrapper...                                0.1s
 ```
 
-### 🔨 安装开发工具
-#### Android Studio 
+## 🔨 安装开发工具
+### Android Studio 
 官方地址：https://developer.android.com/studio/
 
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d4ba21c87?w=1440&h=544&f=png&s=79024)
@@ -219,12 +219,12 @@ allprojects {
 }  
 ```
 
-#### Xcode
+### Xcode
 Xcode 需要 macOS 系统的支持，如果用的是 MacBook，打开 App Store 直接下载就好了。
 
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167aa27d4bbfbc14?w=2360&h=1448&f=png&s=2378266)
 
-#### Visual Studio Code
+### Visual Studio Code
 虽然 Android Studio 也可以用，但是 VS Code 更加轻量，所以推荐一下。
 
 官网：https://code.visualstudio.com
@@ -238,17 +238,17 @@ Xcode 需要 macOS 系统的支持，如果用的是 MacBook，打开 App Store 
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167aabcc6ade980e?w=1300&h=274&f=png&s=26614)
 
 
-### 🐛 Debug 技巧
+## 🐛 Debug 技巧
 
 这里以 VSCode 做为 Dart 编辑工具为例，演示一下常用的 Debug 技巧。
 
-#### 断点调试
+### 断点调试
 
 和常用的 IDE 一样，在代码左侧点一下就会创建一个断点，在 VSCode 的 Debug 模式下点击 `run` 即可进行断点调试。
 
 ![](https://user-gold-cdn.xitu.io/2018/12/20/167c990b20cca7f1?w=974&h=148&f=png&s=32873)
 
-#### debugger 调试
+### debugger 调试
 
 当使用 Dart Observatory 时，可以使用debugger() 语句插入编程式断点,首先需要添加
 
@@ -267,7 +267,7 @@ void someFunction(double offset) {
 
 除此之外，还可以通过 `print` `debugPrint` `flutter logs` 在系统控制台中打印信息辅助调试。
 
-#### 查看运行状态
+### 查看运行状态
 
 当我们从命令行运行 `flutter run` 运行程序时，控制台会给我们一个站内链接，以便我们查看运行状态。
 
@@ -277,8 +277,8 @@ void someFunction(double offset) {
 
 ![](https://user-gold-cdn.xitu.io/2018/12/20/167c990b26e7713c?w=1192&h=646&f=png&s=98449)
 
-### 📦 三方库使用与发布
-#### 使用三方库
+## 📦 三方库使用与发布
+### 使用三方库
 
 Flutter 项目中通过 `pubspec.yaml` 来管理第三方库，在 `pubspec.yaml` 中添加第三方库名称和版本号等信息。
 
@@ -308,7 +308,7 @@ dio: x.x.x  #latest version
 flutter packages get
 ```
 
-#### 发布三方库
+### 发布三方库
 
 上面通过 pubspec 管理的三方库大都也是开发者封装后打包发布的，接下来我们来试着发布一个自己的三方库。
 
@@ -316,7 +316,7 @@ package 分类：
 * Dart packages：使用 Dart 语言编写，为 Flutter 做功能扩展的库。
 * plugin packages：在 Dart packages 基础上，包含 iOS 和 Android 功能调用的插件包。
 
-##### 创建 packages
+#### 创建 packages
 
 dart package:
 ```
@@ -339,7 +339,7 @@ flutter create --org com.rs.example --template=plugin -i swift -a kotlin test_fl
 * ios/Classes/TestFlutterPackagePlugin.m:插件包API的ios实现.
 * example/:一个依赖于该插件的Flutter应用程序，来说明如何使用它
 
-##### 发布 packages
+#### 发布 packages
 
 运行 dry-run 命令以查看是否都准备OK了:
 ```
@@ -353,8 +353,8 @@ flutter packages pub publish
 
 更多请阅读 [Flutter 中文网](https://flutterchina.club/developing-packages/#step-1-开发dart包)
 
-### 📱 iOS 混编开发（Swift、OC）
-#### Cocoapods 引入
+## 📱 iOS 混编开发（Swift、OC）
+### Cocoapods 引入
 
 完成引入后的目录结构如下：
 ![](https://user-gold-cdn.xitu.io/2018/12/14/167ab90307245012?w=816&h=80&f=jpeg&s=17111)
@@ -363,7 +363,7 @@ flutter packages pub publish
 * FlutterIOS: iOS 已有的项目工程
 * flutter_module: Flutter 的库包
 
-#### 创建 module 包
+### 创建 module 包
 到 cd 到总目录 FlutterDemo 下，执行 Flutter 命令 `flutter create -t module xxx`：
 
 ```
@@ -372,7 +372,7 @@ flutter create -t module flutter_module
 
 运行过后，目录中就出现了 flutter_module 文件。
 
-#### Pods 绑定
+### Pods 绑定
 
 这里只介绍通过 cocoapods 绑定 module 包方法，手动导入请参考 Flutter Github wiki。
 
@@ -391,7 +391,7 @@ flutter_application_path = '/Users/whatsxie/Desktop/FlutterDemo/flutter_module/'
 
 执行 `pod install` 即可完成绑定。
 
-#### 设置脚本
+### 设置脚本
 
 打开 Xcode 至项目 TARGETS - 项目名 - BuildPhases 下，添加一个执行脚本。
 
@@ -405,7 +405,7 @@ flutter_application_path = '/Users/whatsxie/Desktop/FlutterDemo/flutter_module/'
 运行 `⌘B` 绑定库就 OK 了。
 
 
-#### Native 调用 Flutter 视图
+### Native 调用 Flutter 视图
 
 Demo 中是 Swift 实现，网上很多 OC 的实现，这里两种语言都提供参考。
 OC:
@@ -519,7 +519,7 @@ flutterViewController.setInitialRoute("route1")
 更多 iOS 与 Flutter 的相互调用，参考 Github Demo 中的 FlutterDemo。
 
 
-### 🎞 Demo 演示
+## 🎞 Demo 演示
 
 1）Todolist UI
 
@@ -546,7 +546,7 @@ cd FlutterDemo/hello_flutter_app/lib/ChatsApp.dart
 
 ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-12-29/99893081.jpg)
 
-### 📚 相关链接
+## 📚 相关链接
 
 * Flutter 中国：https://flutter.io/community/china
 * Flutter 中文社区：
@@ -554,7 +554,7 @@ https://flutter-io.cn/
 * Flutter Github Wiki:
 https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps#experiment-integrate-flutterviewcontroller
 
-### 😬 联系
+## 😬 联系
 
 * WeChat : WhatsXie
 * Email : ReverseScale@iCloud.com

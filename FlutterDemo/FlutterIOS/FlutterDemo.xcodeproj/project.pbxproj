@@ -405,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				DEVELOPMENT_TEAM = SEJU48N6CS;
 				FLUTTER_APPLICATION_PATH = /Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module;
 				FLUTTER_TARGET = /Users/whatsxie/FlutterDemo/flutter_module/lib/main.dart;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -430,7 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				DEVELOPMENT_TEAM = SEJU48N6CS;
 				FLUTTER_APPLICATION_PATH = /Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module;
 				FLUTTER_TARGET = /Users/whatsxie/FlutterDemo/flutter_module/lib/main.dart;
 				FRAMEWORK_SEARCH_PATHS = (

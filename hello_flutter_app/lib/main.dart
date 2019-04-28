@@ -15,7 +15,9 @@ void main() {
   // 错误页面展示
   setCustomErrorPage();
 
-  runApp(RootHomeBottomBar());
+  runApp(
+    RootHomeBottomBar()
+    );
 
   // 基础组件
   // runApp(BasisApp());

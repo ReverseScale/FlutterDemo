@@ -27,6 +27,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  static const platformBaicMessage =
+      const BasicMessageChannel('BasicMessageChannel', StandardMessageCodec());
+
   static const platformBattery =
       const MethodChannel('samples.flutter.io/battery');
   static const platformMessage =

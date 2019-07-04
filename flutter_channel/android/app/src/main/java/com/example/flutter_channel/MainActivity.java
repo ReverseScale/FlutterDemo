@@ -15,6 +15,9 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.util.Log;
+
+import java.util.logging.Logger;
 
 public class MainActivity extends FlutterActivity {
 
@@ -28,25 +31,26 @@ public class MainActivity extends FlutterActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-//    MarketUtil.checkMarket(this);
-//
-//    MarketUtil.toMarket(this, APP_PACKAGE, null);
-//
-//    MarketUtil.toQQDownload(this, APP_PACKAGE);
-//
-//    MarketUtil.to360Download(this, APP_PACKAGE);
-//
-//    MarketUtil.toWandoujia(this, APP_PACKAGE);
-//
-//    MarketUtil.toXiaoMi(this, APP_PACKAGE);
-//
-//    MarketUtil.toMeizu(this, APP_PACKAGE);
-//
-//    MarketUtil.goToSamsungMarket(this, APP_PACKAGE);
-//
-//    MarketUtil.goToSonyMarket(this, "3502");
+  //  MarketUtil.checkMarket(this);
 
-    GeneratedPluginRegistrant.registerWith(this);
+  //  MarketUtil.toMarket(this, APP_PACKAGE, null);
+
+  //  MarketUtil.toQQDownload(this, APP_PACKAGE);
+
+  //  MarketUtil.to360Download(this, APP_PACKAGE);
+
+  //  MarketUtil.toWandoujia(this, APP_PACKAGE);
+
+  //  MarketUtil.toXiaoMi(this, APP_PACKAGE);
+
+  //  MarketUtil.toMeizu(this, APP_PACKAGE);
+
+  //  MarketUtil.goToSamsungMarket(this, APP_PACKAGE);
+
+  //  MarketUtil.goToSonyMarket(this, "3502");
+
+  //  MarketUtil.queryInstalledMarketPkgs(this);
+
 
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
             new MethodCallHandler() {
@@ -85,7 +89,15 @@ public class MainActivity extends FlutterActivity {
   }
 
   private void openGooglePlay() {
-    MarketUtil.toMarket(this, APP_PACKAGE, null);
+//    MarketUtil.toMarket(this, APP_PACKAGE, null);
+
+    System.out.println(MarketUtil.queryInstalledMarketPkgs(this));
+
+    MarketUtil.filterInstalledPkgs(this, MarketUtil.queryInstalledMarketPkgs(this));
+
+    System.out.println(MarketUtil.filterInstalledPkgs(this, MarketUtil.queryInstalledMarketPkgs(this)));
+
+    GeneratedPluginRegistrant.registerWith(this);
   }
 
   private int getBatteryLevel() {

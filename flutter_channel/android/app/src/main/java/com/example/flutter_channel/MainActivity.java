@@ -15,7 +15,6 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.os.Bundle;
 
 public class MainActivity extends FlutterActivity {
 
@@ -23,9 +22,30 @@ public class MainActivity extends FlutterActivity {
 
   private static final String CHANNEL_MESSAGE = "samples.flutter.io/message";
 
+  private static final String APP_PACKAGE = "com.autonavi.minimap";
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+
+//    MarketUtil.checkMarket(this);
+//
+//    MarketUtil.toMarket(this, APP_PACKAGE, null);
+//
+//    MarketUtil.toQQDownload(this, APP_PACKAGE);
+//
+//    MarketUtil.to360Download(this, APP_PACKAGE);
+//
+//    MarketUtil.toWandoujia(this, APP_PACKAGE);
+//
+//    MarketUtil.toXiaoMi(this, APP_PACKAGE);
+//
+//    MarketUtil.toMeizu(this, APP_PACKAGE);
+//
+//    MarketUtil.goToSamsungMarket(this, APP_PACKAGE);
+//
+//    MarketUtil.goToSonyMarket(this, "3502");
+
     GeneratedPluginRegistrant.registerWith(this);
 
     new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
@@ -41,6 +61,7 @@ public class MainActivity extends FlutterActivity {
                     result.error("UNAVAILABLE", "Battery level not available.", null);
                   }
                 } else if (call.method.equals("getMessage")) {
+                  openGooglePlay();
                   result.success("Message: Hi");
                 } else {
                   result.notImplemented();
@@ -60,6 +81,11 @@ public class MainActivity extends FlutterActivity {
                 }
               }
             });
+
+  }
+
+  private void openGooglePlay() {
+    MarketUtil.toMarket(this, APP_PACKAGE, null);
   }
 
   private int getBatteryLevel() {

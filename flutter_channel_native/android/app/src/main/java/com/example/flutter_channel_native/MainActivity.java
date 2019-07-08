@@ -29,8 +29,8 @@ public class MainActivity extends FlutterActivity {
   private MethodChannel mMethodChannel;
   private EventChannel.EventSink mEventSink;
 
-  private static final String CHANNEL1 = "samples.flutter.io/battery";
-  private static final String CHANNEL2 = "samples.flutter.io/test";
+  private static final String CHANNEL1 = "samples.flutter.io/message1";
+  private static final String CHANNEL2 = "samples.flutter.io/message2";
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,6 @@ public class MainActivity extends FlutterActivity {
                       public void handleMessage(Message msg) {
                           super.handleMessage(msg);
                           eventSink.success((count++) + "主动发送消息给flutter");
-//              handler.sendEmptyMessageDelayed(1,1000);
                       }
                   };
 

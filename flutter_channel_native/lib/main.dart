@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String _batteryLevel = 'Unknown battery level.';
   String _messageChannel = 'Unknown channel message.';
 
-  static const messageChannel1 = const BasicMessageChannel('samples.flutter.io/message', StandardMessageCodec());
+  static const messageChannel1 = const BasicMessageChannel('samples.flutter.io/message1', StandardMessageCodec());
   static const messageChannel2 = const BasicMessageChannel('samples.flutter.io/message2', StandardMessageCodec());
 
   @override

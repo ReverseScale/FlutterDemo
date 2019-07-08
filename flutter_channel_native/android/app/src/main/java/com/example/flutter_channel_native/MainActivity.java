@@ -68,7 +68,7 @@ public class MainActivity extends FlutterActivity {
 
   private void listenAlert() {
 
-      mMethodChannel = new MethodChannel(getFlutterView(), "samples.flutter.io/message");
+      mMethodChannel = new MethodChannel(getFlutterView(), "samples.flutter.io/toast");
 
       new EventChannel(getFlutterView(), "samples.flutter.io/event").setStreamHandler(new EventChannel.StreamHandler() {
           @Override

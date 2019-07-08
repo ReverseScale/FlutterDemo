@@ -81,6 +81,19 @@ public class MainActivity extends FlutterActivity {
               mEventSink = null;
           }
       });
+
+      new MethodChannel(getFlutterView(), "samples.flutter.io/toast").setMethodCallHandler((call, result) -> {
+          if ("toast".equals(call.method)) {
+              if (call.hasArgument("content")) {
+                  Toast.makeText(getBaseContext(), call.argument("content"), Toast.LENGTH_SHORT).show();
+                  result.success("success");
+              } else {
+                  result.error("-1", "toast fail", "content is null");
+              }
+          } else {
+              result.notImplemented();
+          }
+      });
   }
 
 

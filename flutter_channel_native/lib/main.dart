@@ -45,11 +45,30 @@ class _MyHomePageState extends State<MyHomePage> {
   String _batteryLevel = 'Unknown battery level.';
   String _messageChannel = 'Unknown channel message.';
 
+  static const messageChannel1 = const BasicMessageChannel('samples.flutter.io/message', StandardMessageCodec());
+  static const messageChannel2 = const BasicMessageChannel('samples.flutter.io/message2', StandardMessageCodec());
+
   @override
   void initState() {
     super.initState();
     eventChannel.receiveBroadcastStream().listen(_onListen,
         onError: _onError, onDone: _onDone, cancelOnError: false);
+
+    receiveMessage();
+    sendMessage();
+  }
+
+  Future<String> sendMessage() async {
+    String reply = await messageChannel1.send('发送给Native端的数据');
+    print('reply: $reply');
+    return reply;
+  }
+
+  void receiveMessage() {
+    messageChannel2.setMessageHandler((message) async {
+      print('message: $message');
+      return '返回Native端的数据';
+    });
   }
 
   void _onListen(dynamic data) {

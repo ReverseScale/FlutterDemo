@@ -35,8 +35,40 @@ class _MyHomePageState extends State<MyHomePage> {
   static const platformMessage =
       const MethodChannel('samples.flutter.io/message');
 
+  static const platformChannel =
+      const MethodChannel('samples.flutter.io/toast');
+  static const eventChannel = const EventChannel('samples.flutter.io/event');
+
+  String textContent = 'Flutter Message';
+  String textContent2 = 'Flutter Message too';
+
   String _batteryLevel = 'Unknown battery level.';
   String _messageChannel = 'Unknown channel message.';
+
+  @override
+  void initState() {
+    super.initState();
+    eventChannel.receiveBroadcastStream().listen(_onListen,
+        onError: _onError, onDone: _onDone, cancelOnError: false);
+  }
+
+  void _onListen(dynamic data) {
+    setState(() {
+      textContent2 = data;
+    });
+  }
+
+  void _onError(Object o) {
+    setState(() {
+      textContent2 = 'EventChannel error';
+    });
+  }
+
+  void _onDone() {
+    setState(() {
+      textContent2 = 'EventChannel done';
+    });
+  }
 
   Future<Null> _getBatteryLevel() async {
     String batteryLevel;
@@ -67,6 +99,20 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void showToast(String content) async {
+    var arguments = Map();
+    arguments['content'] = content;
+
+    try {
+      String result = await platformChannel.invokeMethod('toast', arguments);
+      print('showToast ' + result);
+    } on PlatformException catch (e) {
+      print('showToast ' + e.code + e.message + e.details);
+    } on MissingPluginException catch (e) {
+      print('showToast ' + e.message);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,11 +141,17 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             FloatingActionButton(
               onPressed: _getBatteryLevel,
-              child: Icon(Icons.add),
+              child: Icon(Icons.battery_full),
             ),
             FloatingActionButton(
               onPressed: _getMessageChannel,
-              child: Icon(Icons.wifi),
+              child: Icon(Icons.message),
+            ),
+            FloatingActionButton(
+              onPressed: () {
+                showToast('Flutter Toast');
+              },
+              child: Icon(Icons.warning),
             ),
           ],
         ));

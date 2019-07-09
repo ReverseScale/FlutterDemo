@@ -37,9 +37,9 @@ public class MainActivity extends FlutterActivity {
     super.onCreate(savedInstanceState);
     GeneratedPluginRegistrant.registerWith(this);
 
-      getBattery();
+      getBatteryFunc();
 
-      getMessage();
+      getMessageFunc();
 
 
       listenAlert();
@@ -87,7 +87,6 @@ public class MainActivity extends FlutterActivity {
                           eventSink.success((count++) + "主动发送消息给flutter");
                       }
                   };
-
               }
       );
 
@@ -133,8 +132,6 @@ public class MainActivity extends FlutterActivity {
 
   private void listenAlert() {
 
-      mMethodChannel = new MethodChannel(getFlutterView(), "samples.flutter.io/toast");
-
       new EventChannel(getFlutterView(), "samples.flutter.io/event").setStreamHandler(new EventChannel.StreamHandler() {
           @Override
           public void onListen(Object o, EventChannel.EventSink sink) {
@@ -146,6 +143,8 @@ public class MainActivity extends FlutterActivity {
               mEventSink = null;
           }
       });
+
+      mMethodChannel = new MethodChannel(getFlutterView(), "samples.flutter.io/toast");
 
       new MethodChannel(getFlutterView(), "samples.flutter.io/toast").setMethodCallHandler((call, result) -> {
           if ("toast".equals(call.method)) {
@@ -161,8 +160,7 @@ public class MainActivity extends FlutterActivity {
       });
   }
 
-
-  private void getMessage() {
+  private void getMessageFunc() {
       new MethodChannel(getFlutterView(), CHANNEL_MESSAGE).setMethodCallHandler(
               new MethodChannel.MethodCallHandler() {
                   @Override
@@ -176,7 +174,7 @@ public class MainActivity extends FlutterActivity {
               });
     }
 
-  private void getBattery() {
+  private void getBatteryFunc() {
       new MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(
               new MethodChannel.MethodCallHandler() {
                   @Override
@@ -190,7 +188,6 @@ public class MainActivity extends FlutterActivity {
                               result.error("UNAVAILABLE", "Battery level not available.", null);
                           }
                       } else if (call.method.equals("getMessage")) {
-                          openGooglePlay();
                           result.success("Message: Hi");
                       } else {
                           result.notImplemented();
@@ -227,6 +224,19 @@ public class MainActivity extends FlutterActivity {
     return batteryLevel;
   }
 
+  private void setBasicMessageChannel() {
+      BasicMessageChannel<Object> messageChannel2 = new BasicMessageChannel<Object>(getFlutterView(), "samples.flutter.io/message2", StandardMessageCodec.INSTANCE);
+
+      // 发送消息
+      messageChannel2.send("发送给flutter的数据", new BasicMessageChannel.Reply<Object>() {
+          @Override
+          public void reply(Object o) {
+
+              System.out.println("onReply: " + o);
+          }
+      });
+  }
+
     private int getBatteryLevelBase() {
         int batteryLevel = -1;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -239,16 +249,7 @@ public class MainActivity extends FlutterActivity {
                     intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
         }
 
-        BasicMessageChannel<Object> messageChannel2 = new BasicMessageChannel<Object>(getFlutterView(), "samples.flutter.io/message2", StandardMessageCodec.INSTANCE);
-
-        // 发送消息
-        messageChannel2.send("发送给flutter的数据", new BasicMessageChannel.Reply<Object>() {
-            @Override
-            public void reply(Object o) {
-
-                System.out.println("onReply: " + o);
-            }
-        });
+//        setBasicMessageChannel();
 
         return batteryLevel;
     }

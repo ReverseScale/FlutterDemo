@@ -8,18 +8,22 @@ import '../api/api.dart';
 class ProviderBlock {
   final String _EMPTY = "_empty_";
 
-  final _api = new Api();
-  final _fetcher = new PublishSubject<SearchModel>();
+  final _api = Api();
+  final _fetcher = PublishSubject<SearchModel>();
+
   stream() => _fetcher.stream;
+
+  static ProviderBlock instance() => ProviderBlock();
+
+  // API request
+  void fetchQueryList() async {
+    fetchUrl(search_url, (map) => SearchModel.fromJson(map));
+  }
 
   void dispose() {
     if (!_fetcher.isClosed) {
       _fetcher.close();
     }
-  }
-
-  void fetchQueryList() async {
-    fetchUrl(SEARCH_URL, (map) => SearchModel.fromJson(map));
   }
 
   void fetchUrl(String url, Function handleData) async {
@@ -59,9 +63,6 @@ class ProviderBlock {
           } else {
             if (loading != null) return loading();
           }
-        }
-      );
+        });
   }
-
-  static ProviderBlock newInstance() => new ProviderBlock();
 }

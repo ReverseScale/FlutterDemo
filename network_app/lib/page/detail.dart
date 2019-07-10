@@ -50,7 +50,7 @@ class DetailViewTab extends StatelessWidget {
                     SizedBox(
                       width: 5.0,
                     ),
-                    Text("Pull Rqt"),
+                    Text("PR"),
                   ],
                 ),
               ),
@@ -72,6 +72,6 @@ class DetailViewTab extends StatelessWidget {
 class ChildWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Child'),);
+    return Center(child: Text('Demo'),);
   }
 }

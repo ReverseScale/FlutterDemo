@@ -4,18 +4,18 @@ import 'package:flutter/foundation.dart';
 
 import '../model/search_model.dart';
 import '../model/item_model.dart';
-import '../github/detail.dart';
-import '../model/provider_block.dart';
+import '../page/detail.dart';
+import '../provider/provider.dart';
 
 class MyApp extends StatelessWidget {
-  final ThemeData kIOSTheme = new ThemeData(
+  final ThemeData kIOSTheme = ThemeData(
     //Cupertino主题风格
     primarySwatch: Colors.orange,
     primaryColor: Colors.grey[100],
     primaryColorBrightness: Brightness.light,
   );
 
-  final ThemeData kDefaultTheme = new ThemeData(
+  final ThemeData kDefaultTheme = ThemeData(
     //默认的Material主题风格
     primarySwatch: Colors.purple,
     accentColor: Colors.orangeAccent[400],
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: defaultTargetPlatform ==
-              TargetPlatform.iOS //newdefaultTargetPlatform用于识别操作系统
-          ? kIOSTheme //new
+              TargetPlatform.iOS // defaultTargetPlatform用于识别操作系统
+          ? kIOSTheme //
           : kDefaultTheme,
       home: HomePage(),
     );
@@ -40,7 +40,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  ProviderBlock _blocProvider = ProviderBlock.newInstance();
+  ProviderBlock _blocProvider = ProviderBlock.instance();
 
   @override
   void initState() {

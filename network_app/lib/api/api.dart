@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
 class Api{
-
   void fetchUrl(String url, Function success, Function error, Function empty) async {
     Dio dio = Dio();
     Response response = await dio.get(url);

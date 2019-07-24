@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_calendar/flutter_calendar.dart';
 
 class TodoPage extends StatefulWidget {
   @override
@@ -56,11 +55,6 @@ class _TodoPageState extends State<TodoPage> {
             child: ListView(
               shrinkWrap: true,
               children: <Widget>[
-                Calendar(
-                  onSelectedRangeChange: (range) =>
-                      print("Range is ${range.item1}, ${range.item2}"),
-                  onDateSelected: (date) => handleNewDate(date),
-                ),
                 Card(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

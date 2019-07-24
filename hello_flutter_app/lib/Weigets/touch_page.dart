@@ -25,14 +25,11 @@ class GesturesBackHome extends StatelessWidget {
           color: CupertinoColors.activeBlue,
           child: CupertinoButton(
             child: Icon(CupertinoIcons.add),
-            onPressed: (){
-              Navigator.of(context).push(
-                CupertinoPageRoute(
-                  builder: (BuildContext context){
-                    return NextPage();
-                  }
-                )
-              );
+            onPressed: () {
+              Navigator.of(context)
+                  .push(CupertinoPageRoute(builder: (BuildContext context) {
+                return NextPage();
+              }));
             },
           ),
         ),
@@ -46,17 +43,14 @@ class NextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text('Next Page'),
-        leading: GestureDetector(
-          child: Icon(CupertinoIcons.back),
-          onTap: (){
-            Navigator.pop(context);
-          },
-        )
-      ),
-      child: Center(
-        child: Text('Welcome')
-      ),
+          middle: Text('Next Page'),
+          leading: GestureDetector(
+            child: Icon(CupertinoIcons.back),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )),
+      child: Center(child: Text('Welcome')),
     );
   }
 }
@@ -136,6 +130,12 @@ class _AnimWidgetState extends State<AnimWidget>
       scale: controller,
     );
   }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
 
 class AnimCurve extends StatefulWidget {
@@ -172,6 +172,12 @@ class _AnimCurveState extends State<AnimCurve>
       child: scaled,
       opacity: curve,
     );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 }
 
@@ -249,7 +255,7 @@ class _AnimationState extends State<AnimationDemoView>
 
   @override
   void dispose() {
-    super.dispose();
     controller.dispose();
+    super.dispose();
   }
 }

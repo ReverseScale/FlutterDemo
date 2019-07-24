@@ -11,6 +11,7 @@ import 'Weigets/search_page.dart';
 import 'Weigets/bethelPage_page.dart';
 import 'Weigets/fuzzy_page.dart';
 import 'Weigets/touch_page.dart';
+import 'Weigets/animation_page.dart';
 
 class WeigetPage extends StatelessWidget {
   @override
@@ -169,6 +170,11 @@ class WeigetPage extends StatelessWidget {
             case "Touch":
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (BuildContext context) => TouchPage()));
+              break;
+
+            case "Animation":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => AnimationsPage()));
               break;
 
             default:

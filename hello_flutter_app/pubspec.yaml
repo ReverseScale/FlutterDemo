@@ -20,13 +20,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
-  extended_tabs: ^0.1.0
+  extended_tabs: ^0.2.1
 
   path_provider: '>=0.3.0'
   
   sqflite: any
-
-  flutter_calendar: ^0.0.8
 
   # bottom_tab_bar:
   #   git: https://github.com/LiuC520/flutter_bottom_tab_bar.git

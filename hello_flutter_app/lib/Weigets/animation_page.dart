@@ -20,7 +20,6 @@ class AnimationsPage extends StatelessWidget {
   }
 }
 
-
 // 动画
 class AnimationPage extends StatefulWidget {
   @override
@@ -138,8 +137,8 @@ class OpacityAniWidget extends StatefulWidget {
 
 class _OpacityAniWidgetState extends State<OpacityAniWidget>
     with TickerProviderStateMixin {
+  Animation<double> _animationOpacity;
   AnimationController _controller;
-  Animation<double> opacity;
 
   void _initController() {
     _controller = AnimationController(
@@ -149,7 +148,7 @@ class _OpacityAniWidgetState extends State<OpacityAniWidget>
   }
 
   void _initAni() {
-    opacity = Tween<double>(
+    _animationOpacity = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(
@@ -170,7 +169,7 @@ class _OpacityAniWidgetState extends State<OpacityAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -195,7 +194,7 @@ class _OpacityAniWidgetState extends State<OpacityAniWidget>
   @override
   Widget build(BuildContext context) {
     return Opacity(
-      opacity: opacity.value,
+      opacity: _animationOpacity.value,
       child: Center(
         child: Container(
           color: Colors.red,
@@ -221,8 +220,8 @@ class MovementAniWidget extends StatefulWidget {
 
 class _MovementAniWidgetState extends State<MovementAniWidget>
     with TickerProviderStateMixin {
+  Animation<EdgeInsets> _animationMovement;
   AnimationController _controller;
-  Animation<EdgeInsets> movement;
 
   void _initController() {
     _controller = AnimationController(
@@ -232,7 +231,7 @@ class _MovementAniWidgetState extends State<MovementAniWidget>
   }
 
   void _initAni() {
-    movement = EdgeInsetsTween(
+    _animationMovement = EdgeInsetsTween(
       begin: EdgeInsets.only(top: 0.0, right: 0.0),
       end: EdgeInsets.only(top: 150.0, right: 150.0),
     ).animate(
@@ -241,7 +240,7 @@ class _MovementAniWidgetState extends State<MovementAniWidget>
         curve: Interval(
           0.0,
           0.5,
-          curve: Curves.fastOutSlowIn,
+          curve: Curves.decelerate,
         ),
       ),
     )
@@ -253,7 +252,7 @@ class _MovementAniWidgetState extends State<MovementAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -281,7 +280,7 @@ class _MovementAniWidgetState extends State<MovementAniWidget>
       color: Colors.blue,
       height: 200.0,
       width: 400.0,
-      padding: movement.value,
+      padding: _animationMovement.value,
       child: Center(
         child: Text(
           '位移',
@@ -300,8 +299,8 @@ class RadiusAniWidget extends StatefulWidget {
 
 class _RadiusAniWidgetState extends State<RadiusAniWidget>
     with TickerProviderStateMixin {
+  Animation<BorderRadius> _animationRadius;
   AnimationController _controller;
-  Animation<BorderRadius> radius;
 
   void _initController() {
     _controller = AnimationController(
@@ -311,7 +310,7 @@ class _RadiusAniWidgetState extends State<RadiusAniWidget>
   }
 
   void _initAni() {
-    radius = BorderRadiusTween(
+    _animationRadius = BorderRadiusTween(
       begin: BorderRadius.circular(0.0),
       end: BorderRadius.circular(100.0),
     ).animate(
@@ -332,7 +331,7 @@ class _RadiusAniWidgetState extends State<RadiusAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -371,7 +370,7 @@ class _RadiusAniWidgetState extends State<RadiusAniWidget>
           color: Colors.purple,
           width: 2.0,
         ),
-        borderRadius: radius.value,
+        borderRadius: _animationRadius.value,
       ),
     );
   }
@@ -385,8 +384,8 @@ class ColorAniWidget extends StatefulWidget {
 
 class _ColorAniWidgetState extends State<ColorAniWidget>
     with TickerProviderStateMixin {
+  Animation<Color> _animationColor;
   AnimationController _controller;
-  Animation<Color> color;
 
   void _initController() {
     _controller = AnimationController(
@@ -396,8 +395,8 @@ class _ColorAniWidgetState extends State<ColorAniWidget>
   }
 
   void _initAni() {
-    color = ColorTween(
-      begin: Colors.red[100],
+    _animationColor = ColorTween(
+      begin: Colors.red[500],
       end: Colors.blue[900],
     ).animate(
       CurvedAnimation(
@@ -417,7 +416,7 @@ class _ColorAniWidgetState extends State<ColorAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -442,7 +441,7 @@ class _ColorAniWidgetState extends State<ColorAniWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: color.value,
+      color: _animationColor.value,
       height: 200.0,
       width: 400.0,
       child: Center(
@@ -463,8 +462,8 @@ class RotateAniWidget extends StatefulWidget {
 
 class _RotateAniWidgetState extends State<RotateAniWidget>
     with TickerProviderStateMixin {
+  Animation<double> _animationRotate;
   AnimationController _controller;
-  Animation<double> rotate;
 
   void _initController() {
     _controller = AnimationController(
@@ -474,9 +473,9 @@ class _RotateAniWidgetState extends State<RotateAniWidget>
   }
 
   void _initAni() {
-    rotate = Tween<double>(
+    _animationRotate = Tween<double>(
       begin: 0.0,
-      end: math.pi * 2,
+      end: math.pi * 0.5,
     ).animate(
       CurvedAnimation(
         parent: _controller,
@@ -495,7 +494,7 @@ class _RotateAniWidgetState extends State<RotateAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -523,7 +522,7 @@ class _RotateAniWidgetState extends State<RotateAniWidget>
       color: Colors.green,
       height: 200.0,
       width: 400.0,
-      transform: Matrix4.identity()..rotateZ(rotate.value),
+      transform: Matrix4.identity()..rotateZ(_animationRotate.value),
       child: Center(
         child: Text(
           '旋转',
@@ -542,11 +541,9 @@ class DeformAniWidget extends StatefulWidget {
 
 class _DeformAniWidgetState extends State<DeformAniWidget>
     with TickerProviderStateMixin {
+  Animation<double> _animationWidth;
+  Animation<double> _animationHeight;
   AnimationController _controller;
-
-  Animation<double> width;
-
-  Animation<double> height;
 
   void _initController() {
     _controller = AnimationController(
@@ -556,7 +553,7 @@ class _DeformAniWidgetState extends State<DeformAniWidget>
   }
 
   void _initAni() {
-    height = Tween<double>(
+    _animationHeight = Tween<double>(
       begin: 100.0,
       end: 200.0,
     ).animate(
@@ -576,7 +573,7 @@ class _DeformAniWidgetState extends State<DeformAniWidget>
         print(status);
       });
 
-    width = Tween<double>(
+    _animationWidth = Tween<double>(
       begin: 100.0,
       end: 200.0,
     ).animate(
@@ -597,7 +594,7 @@ class _DeformAniWidgetState extends State<DeformAniWidget>
       });
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
       await _controller.repeat();
     } on TickerCanceled {
@@ -622,8 +619,8 @@ class _DeformAniWidgetState extends State<DeformAniWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width.value,
-      height: height.value,
+      width: _animationWidth.value,
+      height: _animationHeight.value,
       color: Colors.deepPurple,
       child: Center(
         child: Text(
@@ -643,21 +640,15 @@ class StaggeredAniWidget extends StatefulWidget {
 
 class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
     with TickerProviderStateMixin {
+  Animation<double> _animationOpacity;
+
+  Animation<EdgeInsets> _animationMovement;
+  Animation<Color> _animationColor;
+  Animation<BorderRadius> _animationRadius;
+  Animation<double> _animationRotate;
+  Animation<double> _animationWidth;
+  Animation<double> _animationHeight;
   AnimationController _controller;
-
-  Animation<double> opacity;
-
-  Animation<EdgeInsets> movement;
-
-  Animation<Color> color;
-
-  Animation<BorderRadius> radius;
-
-  Animation<double> rotate;
-
-  Animation<double> width;
-
-  Animation<double> height;
 
   void _initController() {
     _controller = AnimationController(
@@ -667,7 +658,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
   }
 
   void _initAni() {
-    opacity = Tween<double>(
+    _animationOpacity = Tween<double>(
       begin: 0.0,
       end: 1.0,
     ).animate(
@@ -681,9 +672,9 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    rotate = Tween<double>(
+    _animationRotate = Tween<double>(
       begin: 0.0,
-      end: math.pi * 2,
+      end: math.pi * 2.5,
     ).animate(
       CurvedAnimation(
         parent: _controller,
@@ -695,7 +686,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    movement = EdgeInsetsTween(
+    _animationMovement = EdgeInsetsTween(
       begin: EdgeInsets.only(top: 0.0),
       end: EdgeInsets.only(top: 100.0),
     ).animate(
@@ -709,7 +700,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    color = ColorTween(
+    _animationColor = ColorTween(
       begin: Colors.blue[300],
       end: Colors.blue[900],
     ).animate(
@@ -723,7 +714,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    radius = BorderRadiusTween(
+    _animationRadius = BorderRadiusTween(
       begin: BorderRadius.circular(0.0),
       end: BorderRadius.circular(100.0),
     ).animate(
@@ -737,7 +728,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    height = Tween<double>(
+    _animationHeight = Tween<double>(
       begin: 100.0,
       end: 200.0,
     ).animate(
@@ -751,7 +742,7 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
       ),
     );
 
-    width = Tween<double>(
+    _animationWidth = Tween<double>(
       begin: 100.0,
       end: 200.0,
     ).animate(
@@ -766,9 +757,8 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
     );
   }
 
-  Future _startAnimation() async {
+  _startAnimation() async {
     try {
-//      await _controller.repeat();
       await _controller.forward().orCancel;
       await _controller.reverse().orCancel;
     } on TickerCanceled {
@@ -792,20 +782,20 @@ class _StaggeredAniWidgetState extends State<StaggeredAniWidget>
 
   Widget _buildAni(BuildContext context, Widget child) {
     return Container(
-      padding: movement.value,
-      transform: Matrix4.identity()..rotateZ(rotate.value),
+      padding: _animationMovement.value,
+      transform: Matrix4.identity()..rotateZ(_animationRotate.value),
       child: Opacity(
-        opacity: opacity.value,
+        opacity: _animationOpacity.value,
         child: Container(
-          width: width.value,
-          height: height.value,
+          width: _animationWidth.value,
+          height: _animationHeight.value,
           decoration: BoxDecoration(
-            color: color.value,
+            color: _animationColor.value,
             border: Border.all(
               color: Colors.black,
               width: 3.0,
             ),
-            borderRadius: radius.value,
+            borderRadius: _animationRadius.value,
           ),
           child: Center(
             child: Text(

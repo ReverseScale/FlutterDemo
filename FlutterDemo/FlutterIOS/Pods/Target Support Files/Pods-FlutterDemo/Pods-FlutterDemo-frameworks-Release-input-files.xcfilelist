@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-FlutterDemo/Pods-FlutterDemo-frameworks.sh
+${PODS_ROOT}/../../flutter_module/.ios/Flutter/engine/Flutter.framework
+${BUILT_PRODUCTS_DIR}/FlutterPluginRegistrant/FlutterPluginRegistrant.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

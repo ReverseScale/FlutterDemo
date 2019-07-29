@@ -5,8 +5,8 @@ PODS:
   - Kingfisher (4.10.1)
 
 DEPENDENCIES:
-  - Flutter (from `/Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module/.ios/Flutter/engine`)
-  - FlutterPluginRegistrant (from `/Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - Flutter (from `../flutter_module/.ios/Flutter/engine`)
+  - FlutterPluginRegistrant (from `../flutter_module/.ios/Flutter/FlutterPluginRegistrant`)
   - Kingfisher (~> 4.10.1)
 
 SPEC REPOS:
@@ -15,15 +15,15 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: "/Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module/.ios/Flutter/engine"
+    :path: "../flutter_module/.ios/Flutter/engine"
   FlutterPluginRegistrant:
-    :path: "/Users/whatsxie/FlutterDemo/FlutterDemo/flutter_module/.ios/Flutter/FlutterPluginRegistrant"
+    :path: "../flutter_module/.ios/Flutter/FlutterPluginRegistrant"
 
 SPEC CHECKSUMS:
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  FlutterPluginRegistrant: 5f33f54e5f25444620ff39f2bdee4262d673ec7b
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  FlutterPluginRegistrant: 8855ca2b426d228cb41aa6c26c0c83b8c49e3593
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
 
-PODFILE CHECKSUM: d364e1f4da13aead122d80dad5ebf126c781a552
+PODFILE CHECKSUM: d4cde12c95452c8d49296417aaabafb9f49372dc
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.1
